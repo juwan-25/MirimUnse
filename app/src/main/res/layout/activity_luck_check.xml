@@ -4,11 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/background"
-    tools:context=".LuckCheckActivity">
+    tools:context=".LuckCheckDetailActivity">
+    <!--툴바-->
     <FrameLayout
-
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <ImageView
@@ -16,14 +15,10 @@
             android:layout_height="100dp"
             android:src="@drawable/toolbar"/>
         <ImageView
-            android:layout_width="90dp"
+            android:id="@+id/logo"
+            android:layout_width="85dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:src="@drawable/logo"/>
     </FrameLayout>
-
-
-
-
-
 </LinearLayout>
