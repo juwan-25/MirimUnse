@@ -10,6 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MirimUnse">
         <activity
+            android:name=".LuckCheckDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LuckRecordDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LuckRecordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LuckCheckActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
