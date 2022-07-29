@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
+    android:orientation="vertical"
     tools:context=".LuckCheckDetailActivity">
     <!--툴바-->
     <FrameLayout
@@ -21,4 +22,12 @@
             android:layout_gravity="center"
             android:src="@drawable/logo"/>
     </FrameLayout>
+
+    <ImageView
+        android:id="@+id/img_card"
+        android:layout_gravity="center"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/card"/>
+
 </LinearLayout>
