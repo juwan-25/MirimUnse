@@ -35,6 +35,8 @@
         android:paddingTop="49dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:gravity="center"
         android:text="내용 입력해주세요"/>
 
     <!--바텀바-->
