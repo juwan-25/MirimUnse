@@ -48,7 +48,9 @@
                 android:layout_width="250dp"
                 android:layout_marginLeft="20dp"
                 android:layout_height="wrap_content"
-                android:text="내용입력해세요"/>
+                android:fontFamily="@font/notoSerifKR"
+                android:textColor="#FBDADA"
+                android:text="22.08.02 OO이의 운세"/>
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -61,7 +63,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <ImageView
-            android:paddingTop="45dp"
+            android:paddingTop="46dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:src="@drawable/bottombar"/>
