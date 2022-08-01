@@ -31,9 +31,11 @@
         android:src="@drawable/card"/>
 
     <TextView
+        android:id="@+id/text_content"
+        android:paddingTop="49dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="내용 들어갈 자리"/>
+        android:text="내용 입력해주세요"/>
 
     <!--바텀바-->
     <FrameLayout
