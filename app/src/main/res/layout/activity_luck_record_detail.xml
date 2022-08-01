@@ -56,8 +56,6 @@
         </LinearLayout>
     </FrameLayout>
 
-
-
     <!--바텀바-->
     <FrameLayout
         android:layout_width="wrap_content"
