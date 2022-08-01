@@ -22,8 +22,49 @@
             android:layout_gravity="center"
             android:src="@drawable/logo"/>
     </FrameLayout>
-
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <FrameLayout
+            android:layout_marginTop="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="300dp"
+                android:layout_gravity="center"
+                android:src="@drawable/card"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_gravity="bottom"
+                android:paddingLeft="180dp"
+                android:paddingBottom="20dp"
+                android:src="@drawable/btn_share"/>
+        </FrameLayout>
+        <TextView
+            android:id="@+id/text_check"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/notoSerifKR"
+            android:textSize="17dp"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:text="매점 아줌마한테 간식 얻어먹을 것만 같은 날"
+            android:gravity="center"/>
+        <TextView
+            android:id="@+id/text_check_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:gravity="center"
+            android:text="매점을 들려 맛있는 간식을 사먹는다면..\n행복해지고 말 거야\n매점 아주머니께서 맛있는 걸 덤으로 주실지도!!"
+            android:textSize="14dp"
+            android:fontFamily="@font/notoSerifKR"
+            android:textColor="#fff"
+            android:layout_marginBottom="20dp"/>
+    </LinearLayout>
     <!--바텀바-->
     <FrameLayout
         android:layout_width="wrap_content"
