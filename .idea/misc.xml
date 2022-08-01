@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/mirim_Android/MirimUnse/app/src/main/res/drawable/background.xml" value="0.14" />
+        <entry key="..\:/mirim_Android/MirimUnse/app/src/main/res/layout/activity_luck_check.xml" value="0.25" />
+        <entry key="..\:/mirim_Android/MirimUnse/app/src/main/res/layout/activity_luck_check_detail.xml" value="0.25" />
+        <entry key="..\:/mirim_Android/MirimUnse/app/src/main/res/layout/activity_luck_record.xml" value="0.25" />
+        <entry key="..\:/mirim_Android/MirimUnse/app/src/main/res/layout/activity_luck_record_detail.xml" value="0.1770516717325228" />
+        <entry key="..\:/mirim_Android/MirimUnse/app/src/main/res/layout/activity_main.xml" value="0.1770516717325228" />
+        <entry key="..\:/mirim_Android/MirimUnse/app/src/main/res/layout/backgroung_layout.xml" value="0.1770516717325228" />
+      </map>
+    </option>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
+</project>
