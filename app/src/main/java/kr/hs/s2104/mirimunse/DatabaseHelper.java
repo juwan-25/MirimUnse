@@ -52,7 +52,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return result != -1; //if result = -1 data dodsent insert
     }
 
-    //데이터 SELECT
+    //데이터 SELECT 메서드
     public Cursor viewData(){
         SQLiteDatabase db = this.getReadableDatabase();
         String query = "Select * from "+DB_TABLE;
