@@ -23,19 +23,6 @@
             android:src="@drawable/logo"/>
     </FrameLayout>
 
-    <ImageView
-        android:id="@+id/img_card"
-        android:layout_gravity="center"
-        android:layout_width="190dp"
-        android:layout_height="wrap_content"
-        android:src="@drawable/card"/>
-
-    <TextView
-        android:id="@+id/text_content"
-        android:paddingTop="49dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="내용 입력해주세요"/>
 
     <!--바텀바-->
     <FrameLayout
