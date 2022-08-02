@@ -26,9 +26,6 @@ public class LuckCheckActivity extends AppCompatActivity {
         card3 = findViewById(R.id.card1);
         card3.setOnClickListener(cardListener);
 
-        recordToDetail = findViewById(R.id.textv);
-        recordToDetail.setOnClickListener(textViewListenerListener);
-
 
         checkMain = findViewById(R.id.btn_check);
         checkMain.setOnClickListener(new View.OnClickListener() {
@@ -39,14 +36,6 @@ public class LuckCheckActivity extends AppCompatActivity {
             }
         });
 
-        recordMain = findViewById(R.id.text_record);
-        recordMain.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), LuckRecordActivity.class);
-                startActivity(intent);
-            }
-        });
     }
 
     View.OnClickListener textViewListenerListener = new View.OnClickListener() {
