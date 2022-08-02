@@ -11,12 +11,23 @@ import android.widget.TextView;
 public class LuckCheck2Activity extends AppCompatActivity {
     ImageView checkMain;
     TextView recordMain;
+    ImageView cardCheck;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_luck_check2);
 
+        cardCheck = findViewById(R.id.card_check);
+        cardCheck.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), LuckCheckDetailActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //하단바 연결
         checkMain = findViewById(R.id.btn_check);
         checkMain.setOnClickListener(new View.OnClickListener() {
             @Override
