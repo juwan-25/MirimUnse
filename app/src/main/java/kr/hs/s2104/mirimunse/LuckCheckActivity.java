@@ -20,12 +20,10 @@ public class LuckCheckActivity extends AppCompatActivity {
         setContentView(R.layout.activity_luck_check);
         card1 = findViewById(R.id.card1);
         card1.setOnClickListener(cardListener);
-        card2 = findViewById(R.id.card1);
+        card2 = findViewById(R.id.card2);
         card2.setOnClickListener(cardListener);
-        card3 = findViewById(R.id.card1);
+        card3 = findViewById(R.id.card3);
         card3.setOnClickListener(cardListener);
-
-
 
         recordMain = findViewById(R.id.text_record);
         recordMain.setOnClickListener(new View.OnClickListener() {
