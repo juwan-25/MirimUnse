@@ -90,7 +90,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="2px">
         <ImageView
-            android:paddingTop="45dp"
+            android:paddingTop="55dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:src="@drawable/bottombar"/>
