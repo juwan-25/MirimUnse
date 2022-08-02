@@ -13,6 +13,7 @@ public class LuckCheckActivity extends AppCompatActivity {
     ImageView card1, card2, card3;
     ImageView checkMain;
     TextView recordMain;
+    TextView recordToDetail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +25,10 @@ public class LuckCheckActivity extends AppCompatActivity {
         card2.setOnClickListener(cardListener);
         card3 = findViewById(R.id.card1);
         card3.setOnClickListener(cardListener);
+
+        recordToDetail = findViewById(R.id.textv);
+        recordToDetail.setOnClickListener(textViewListenerListener);
+
 
         checkMain = findViewById(R.id.btn_check);
         checkMain.setOnClickListener(new View.OnClickListener() {
@@ -43,6 +48,14 @@ public class LuckCheckActivity extends AppCompatActivity {
             }
         });
     }
+
+    View.OnClickListener textViewListenerListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            Intent intent = new Intent(getApplicationContext(), LuckRecordDetailActivity.class);
+            startActivity(intent);
+        }
+    };
 
     View.OnClickListener cardListener = new View.OnClickListener() {
         @Override
