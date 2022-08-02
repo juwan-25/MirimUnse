@@ -31,7 +31,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/notoSerifKR"
+        android:fontFamily="@font/notoserif"
         android:text="세 장의 카드 중 한 장을 골라주세요!"
         android:textColor="#FBDADA"
         android:gravity="center"

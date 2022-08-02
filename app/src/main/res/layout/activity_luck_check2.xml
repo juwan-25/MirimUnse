@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="카드를 눌러 확인하세요!"
-            android:fontFamily="@font/notoSerifKR"
+            android:fontFamily="@font/notoserif"
             android:textColor="#FBDADA"/>
     </LinearLayout>
     <!--바텀바-->
