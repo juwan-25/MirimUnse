@@ -17,23 +17,27 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
         <ImageView
-            android:layout_width="wrap_content"
+            android:layout_width="300dp"
             android:layout_height="500dp"
-            android:src="@drawable/maincard1"/>
+            android:layout_gravity="center"
+            android:src="@drawable/maincard1" />
+
         <ImageView
-            android:layout_width="wrap_content"
+            android:id="@+id/img_to_check"
+            android:layout_width="300dp"
             android:layout_height="500dp"
-            android:src="@drawable/maincard2"/>
+            android:src="@drawable/maincard2"
+            android:layout_gravity="center"/>
         <TextView
-            android:paddingLeft="155dp"
-            android:paddingTop="200dp"
+            android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#FFFFFF"
             android:textSize="30dp"
             android:text="클릭하기"/>
     </FrameLayout>
-
 </LinearLayout>
