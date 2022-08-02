@@ -5,11 +5,14 @@ import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class LuckCheckActivity extends AppCompatActivity {
     ImageView card1, card2, card3;
+    ImageView checkMain;
+    TextView recordMain;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +24,24 @@ public class LuckCheckActivity extends AppCompatActivity {
         card2.setOnClickListener(cardListener);
         card3 = findViewById(R.id.card1);
         card3.setOnClickListener(cardListener);
+
+        checkMain = findViewById(R.id.btn_check);
+        checkMain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), LuckCheckActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        recordMain = findViewById(R.id.text_record);
+        recordMain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), LuckRecordActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     View.OnClickListener cardListener = new View.OnClickListener() {
