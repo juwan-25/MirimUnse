@@ -14,7 +14,6 @@ public class MainActivity extends AppCompatActivity {
     //insertData: 데이터 삽입 메서드
     //viewData: 데이터 조회 메서드
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
