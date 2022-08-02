@@ -24,14 +24,16 @@
     </FrameLayout>
 
     <FrameLayout
+        android:layout_marginTop="34px"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:padding="20dp">
         <ImageView
             android:paddingLeft="20dp"
-            android:paddingTop="40dp"
+            android:paddingVertical="30dp"
             android:src="@drawable/line"
             android:layout_width="wrap_content"
-            android:layout_height="530dp"/>
+            android:layout_height="537dp"/>
 
         <LinearLayout
             android:paddingTop="60dp"

@@ -24,38 +24,38 @@
     </FrameLayout>
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="531dp">
+        android:layout_height="580dp">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
         <FrameLayout
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="400dp">
             <ImageView
-                android:layout_width="200dp"
-                android:layout_height="300dp"
+                android:layout_width="230dp"
+                android:layout_height="330dp"
                 android:layout_gravity="center"
                 android:src="@drawable/card_check_detail"/>
             <ImageView
                 android:id="@+id/card_detail"
                 android:layout_gravity="center"
-                android:layout_width="120dp"
-                android:layout_height="230dp"
-                android:layout_marginLeft="29.5dp"
+                android:layout_width="150dp"
+                android:layout_height="250dp"
+                android:layout_marginLeft="34dp"
                 android:layout_marginBottom="2dp"
                 android:src="@drawable/img_riches_good"/>
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="56dp"
+                android:layout_height="95dp"
                 android:layout_gravity="bottom"
-                android:paddingLeft="180dp"
-                android:paddingBottom="20dp"
+                android:paddingLeft="205dp"
+                android:paddingBottom="58dp"
                 android:src="@drawable/btn_share"/>
         </FrameLayout>
         <TextView
-            android:id="@+id/text_check"
+            android:id="@+id/text_check_tit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/notoserif"
@@ -65,7 +65,7 @@
             android:text="매점 아줌마한테 간식 얻어먹을 것만 같은 날"
             android:gravity="center"/>
         <TextView
-            android:id="@+id/text_check_detail"
+            android:id="@+id/text_check_cont"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="15dp"
@@ -87,16 +87,18 @@
     <!--바텀바-->
     <FrameLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2px">
         <ImageView
             android:paddingTop="45dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:src="@drawable/bottombar"/>
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content">
+
             <TextView
                 android:id="@+id/text_record"
                 android:layout_width="0dp"
@@ -105,14 +107,15 @@
                 android:gravity="center_horizontal"
                 android:paddingTop="62dp"
                 android:text="보관함"
-                android:textColor="#80ffffff"/>
+                android:textColor="#80ffffff" />
+
             <ImageView
                 android:id="@+id/btn_check"
-                android:layout_marginTop="10dp"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="85dp"
-                android:layout_weight="1"
-                android:src="@drawable/mainbtn_img"/>
+                android:layout_marginTop="10dp"
+                android:src="@drawable/mainbtn_img" />
+
             <TextView
                 android:id="@+id/text_tool"
                 android:layout_width="0dp"
@@ -121,7 +124,7 @@
                 android:gravity="center_horizontal"
                 android:paddingTop="62dp"
                 android:text="설정"
-                android:textColor="#80ffffff"/>
+                android:textColor="#80ffffff" />
 
         </LinearLayout>
     </FrameLayout>
