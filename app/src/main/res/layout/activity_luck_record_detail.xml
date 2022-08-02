@@ -80,14 +80,14 @@
                 android:gravity="center_horizontal"
                 android:paddingTop="62dp"
                 android:text="보관함"
-                android:textColor="#80ffffff"/>
+                android:textColor="#E7998D"/>
             <ImageView
                 android:id="@+id/btn_check"
                 android:layout_marginTop="10dp"
                 android:layout_width="0dp"
                 android:layout_height="85dp"
                 android:layout_weight="1"
-                android:src="@drawable/mainbtn_img"/>
+                android:src="@drawable/mainunbtn_img"/>
             <TextView
                 android:id="@+id/text_tool"
                 android:layout_width="0dp"

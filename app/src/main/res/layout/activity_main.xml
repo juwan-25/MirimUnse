@@ -32,6 +32,7 @@
             android:layout_height="500dp"
             android:src="@drawable/maincard2"
             android:layout_gravity="center"/>
+
         <TextView
             android:layout_gravity="center"
             android:layout_width="wrap_content"
