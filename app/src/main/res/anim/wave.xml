@@ -6,7 +6,7 @@
         android:duration="2000" />
     <rotate xmlns:android="http://schemas.android.com/apk/res/android"
         android:interpolator="@android:anim/linear_interpolator"
-        android:repeatCount="infinite"
+        android:repeatCount="0"
         android:duration="4000"
         android:pivotX="50%"
         android:pivotY="50%"
