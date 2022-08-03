@@ -12,7 +12,6 @@ import androidx.appcompat.app.AppCompatActivity;
 public class LuckCheckActivity extends AppCompatActivity {
     ImageView card1, card2, card3;
     TextView recordMain, toolMain;
-    TextView recordToDetail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,14 +43,6 @@ public class LuckCheckActivity extends AppCompatActivity {
         });
 
     }
-
-    View.OnClickListener textViewListenerListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            Intent intent = new Intent(getApplicationContext(), LuckRecordDetailActivity.class);
-            startActivity(intent);
-        }
-    };
 
     View.OnClickListener cardListener = new View.OnClickListener() {
         @Override
