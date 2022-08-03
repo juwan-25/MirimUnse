@@ -30,7 +30,6 @@
         android:paddingHorizontal="25dp"
         android:textColor="@color/btn_color"
         android:fontFamily="@font/notoserif"
-        android:text="d"
         android:background="@drawable/edit_dlg"/>
 
 
