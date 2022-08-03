@@ -48,6 +48,7 @@
                 android:layout_marginBottom="2dp"
                 android:src="@drawable/img_riches_good"/>
             <ImageView
+                android:id="@+id/btn_share"
                 android:layout_width="match_parent"
                 android:layout_height="95dp"
                 android:layout_gravity="bottom"
