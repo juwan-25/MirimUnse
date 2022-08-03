@@ -3,8 +3,8 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FBDADA"
     android:gravity="center"
+    android:background="@drawable/dlg_back"
     android:padding="20dp">
 
     <TextView
@@ -56,6 +56,6 @@
             android:textColor="@color/btn_color"
             android:fontFamily="@font/notoserif"
             android:layout_margin="10dp"/>
-    </LinearLayout>
 
+    </LinearLayout>
 </LinearLayout>

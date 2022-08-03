@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.icu.text.LocaleDisplayNames;
 import android.net.Uri;
 import android.os.Bundle;
@@ -44,12 +46,14 @@ public class LuckCheckDetailActivity extends AppCompatActivity {
         Random random = new Random();
         int i = random.nextInt(randomTit.length-1);
 
-        textCheckTit.setText(randomTit[i]);
-        textCheckCont.setText(randomCont[i]);
-        cardDetail.setImageResource(randomImgId[i]);
+//        textCheckTit.setText(randomTit[i]);
+//        textCheckCont.setText(randomCont[i]);
+//        cardDetail.setImageResource(randomImgId[i]);
 
 
+        //대화상자
         dlg1 = new Dialog(this);
+        dlg1.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dlg1.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dlg1.setContentView(R.layout.dialog01);
 
