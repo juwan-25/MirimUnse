@@ -4,13 +4,19 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.icu.text.CaseMap;
 import android.icu.text.LocaleDisplayNames;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
+
+import java.lang.reflect.Array;
 
 public class LuckCheckDetailActivity extends AppCompatActivity {
     ImageView checkMain;
