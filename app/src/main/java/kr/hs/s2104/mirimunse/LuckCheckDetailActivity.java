@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 public class LuckCheckDetailActivity extends AppCompatActivity {
     ImageView checkMain;
-    TextView recordMain;
+    TextView recordMain, toolMain;
     Dialog dlg1;
     ImageView btnSave;
 
@@ -22,6 +22,15 @@ public class LuckCheckDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_luck_check_detail);
+
+        toolMain = findViewById(R.id.text_tool);
+        toolMain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
+                startActivity(intent);
+            }
+        });
 
         checkMain = findViewById(R.id.btn_check);
         checkMain.setOnClickListener(new View.OnClickListener() {

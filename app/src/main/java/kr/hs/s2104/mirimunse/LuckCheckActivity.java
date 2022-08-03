@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class LuckCheckActivity extends AppCompatActivity {
     ImageView card1, card2, card3;
-    TextView recordMain;
+    TextView recordMain, toolMain;
     TextView recordToDetail;
 
     @Override
@@ -24,6 +24,15 @@ public class LuckCheckActivity extends AppCompatActivity {
         card2.setOnClickListener(cardListener);
         card3 = findViewById(R.id.card3);
         card3.setOnClickListener(cardListener);
+
+        toolMain = findViewById(R.id.text_tool);
+        toolMain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
+                startActivity(intent);
+            }
+        });
 
         recordMain = findViewById(R.id.text_record);
         recordMain.setOnClickListener(new View.OnClickListener() {

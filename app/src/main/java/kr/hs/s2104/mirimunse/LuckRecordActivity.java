@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class LuckRecordActivity extends AppCompatActivity {
-    TextView textV;
+    TextView textV, toolMain;
     ImageView checkMain;
 
     @Override
@@ -18,6 +18,15 @@ public class LuckRecordActivity extends AppCompatActivity {
         setContentView(R.layout.activity_luck_record);
         textV = findViewById(R.id.textv);
         textV.setOnClickListener(textViewListenerListener);
+
+        toolMain = findViewById(R.id.text_tool);
+        toolMain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
+                startActivity(intent);
+            }
+        });
 
         checkMain = findViewById(R.id.btn_check);
         checkMain.setOnClickListener(new View.OnClickListener() {
