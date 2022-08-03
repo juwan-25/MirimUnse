@@ -13,7 +13,7 @@ import android.widget.TextView;
 public class SettingsActivity extends AppCompatActivity {
     ImageView checkMain;
     TextView recordMain, toolMain;
-    String[] detail1 = {"개발툴: Android Studrio Java"};
+    String[] detail1 = {"개발툴: Android Studio Java"};
     String[] detail2 = {"2102 김윤서", "2104 백지민", "2211이주완"};
     String[] detail3 = {"개발기간: 2022.07.25~"};
 
