@@ -13,13 +13,22 @@ import android.widget.TextView;
 
 public class LuckCheck2Activity extends AppCompatActivity {
     ImageView checkMain;
-    TextView recordMain;
+    TextView recordMain, toolMain;
     ImageView cardCheck;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_luck_check2);
+
+        toolMain = findViewById(R.id.text_tool);
+        toolMain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
+                startActivity(intent);
+            }
+        });
 
         cardCheck = findViewById(R.id.card_check);
         cardCheck.setOnClickListener(new View.OnClickListener() {
