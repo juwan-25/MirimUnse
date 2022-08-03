@@ -24,7 +24,8 @@
     </FrameLayout>
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="580dp">
+        android:layout_height="0dp"
+        android:layout_weight="2.7">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -87,8 +88,8 @@
     <!--바텀바-->
     <FrameLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2px">
+        android:layout_height="0dp"
+        android:layout_weight="0.5">
         <ImageView
             android:paddingTop="55dp"
             android:layout_width="match_parent"
@@ -97,15 +98,14 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
+            android:layout_height="match_parent">
             <TextView
                 android:id="@+id/text_record"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:paddingTop="62dp"
+                android:gravity="center"
+                android:paddingTop="58dp"
                 android:text="보관함"
                 android:textColor="#80ffffff" />
 
@@ -121,8 +121,8 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:paddingTop="62dp"
+                android:gravity="center"
+                android:paddingTop="58dp"
                 android:text="설정"
                 android:textColor="#80ffffff" />
 

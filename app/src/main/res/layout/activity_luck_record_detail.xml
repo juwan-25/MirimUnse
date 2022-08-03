@@ -22,9 +22,13 @@
             android:layout_gravity="center"
             android:src="@drawable/logo"/>
     </FrameLayout>
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_weight="3">
     <FrameLayout
-        android:layout_marginTop="50dp"
         android:layout_marginBottom="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -62,13 +66,13 @@
         android:text="매점을 들려 맛있는 간식을 사먹는다면..\n행복해지고 말 거야\n매점 아주머니께서 맛있는 걸 덤으로 주실지도!!"
         android:textSize="14dp"
         android:fontFamily="@font/notoserif"
-        android:textColor="#fff"
-        android:layout_marginBottom="30dp"/>
-
+        android:textColor="#fff"/>
+    </LinearLayout>
     <!--바텀바-->
     <FrameLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="0dp"
+        android:layout_weight="0.5">
         <ImageView
             android:paddingTop="45dp"
             android:layout_width="match_parent"
