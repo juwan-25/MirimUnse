@@ -37,28 +37,71 @@
             android:gravity="center"
             android:textSize="22sp"
             android:textColor="#FFFFFF"
+            android:layout_marginBottom="20dp"
             android:text="정보"/>
 
-        <Spinner
-            android:id="@+id/spinner1"
+        <LinearLayout
+            android:id="@+id/settings_text_detail1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            tools:ignore="SpeakableTextPresentCheck" />
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:paddingLeft="185dp"
+                android:layout_gravity="center"
+                android:textColor="#FFFFFF"
+                android:text="내용"/>
+            <Spinner
+                android:id="@+id/spinner1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                tools:ignore="SpeakableTextPresentCheck" />
+        </LinearLayout>
 
-        <Spinner
-            android:id="@+id/spinner2"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            tools:ignore="SpeakableTextPresentCheck" />
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/settings_text_detail2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:paddingLeft="185dp"
+                android:layout_gravity="center"
+                android:textColor="#FFFFFF"
+                android:text="내용"/>
+            <Spinner
+                android:id="@+id/spinner2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                tools:ignore="SpeakableTextPresentCheck" />
+        </LinearLayout>
 
-        <Spinner
-            android:id="@+id/spinner3"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            tools:ignore="SpeakableTextPresentCheck" />
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/settings_text_detail3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:paddingLeft="185dp"
+                android:layout_gravity="center"
+                android:textColor="#FFFFFF"
+                android:text="내용"/>
+            <Spinner
+                android:id="@+id/spinner3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                tools:ignore="SpeakableTextPresentCheck" />
+        </LinearLayout>
 
         <RadioGroup
             android:layout_width="match_parent"
@@ -68,6 +111,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingLeft="40dp"
                 android:textColor="#FFFFFF"
                 android:textSize="16sp"
                 android:text="알림 켜기"/>
@@ -76,7 +120,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:minWidth="48dp"
-                android:paddingBottom="162dp" />
+                android:paddingBottom="282dp" />
         </RadioGroup>
 
     </LinearLayout>
