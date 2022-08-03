@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        db = new DatabaseHelper(this);
+        //db = new DatabaseHelper(this);
 
         //메인화면에서 luckcheck 화면으로 전환
         ImageView imgToChek = findViewById(R.id.img_to_check);
