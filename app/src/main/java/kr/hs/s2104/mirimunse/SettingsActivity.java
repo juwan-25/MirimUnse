@@ -14,7 +14,7 @@ public class SettingsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_luck_record_detail);
+        setContentView(R.layout.activity_settings);
 
         toolMain = findViewById(R.id.text_tool);
         toolMain.setOnClickListener(new View.OnClickListener() {
