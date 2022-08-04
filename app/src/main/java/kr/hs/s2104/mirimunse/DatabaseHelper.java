@@ -10,29 +10,19 @@ import androidx.annotation.Nullable;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
+    private static String DB_NAME = "MirimUnsae.db";
+
     //DB 생성
     public DatabaseHelper(Context context) {
-        super(context, "fortuneDB", null, 1);
+        super(context, DB_NAME, null, 1);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE recordTBL(" +
-                "R_DATE date," +
-                "R_TITLE text," +
-                "R_CONTEXT text"+
-                ");");
-
-        db.execSQL("CREATE TABLE contentsTBL(" +
-                "F_TITLE text," +
-                "F_CONTEXT text"+
-                ");");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
-        db.execSQL("DROP TABLE IF EXISTS recordTBL");
-        onCreate(db);
     }
 
 }
