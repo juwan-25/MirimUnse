@@ -71,7 +71,7 @@
             android:layout_height="wrap_content"
             android:padding="15dp"
             android:gravity="center"
-            android:text="매점을 들려 맛있는 간식을 사먹는다면..\n행복해지고 말 거야\n매점 아주머니께서 맛있는 걸 덤으로 주실지도!!"
+            android:text="매점을 들려 맛있는 간식을 사먹는다면..\n행복해지고 말 거야\n매점 아주머니께서 맛있는 걸 덤으로 주실지도!!\n이 기세를 몰아서 행복한 하루를 보내버리자~"
             android:textSize="14dp"
             android:fontFamily="@font/notoserif"
             android:textColor="#fff"
