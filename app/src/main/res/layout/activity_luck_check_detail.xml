@@ -105,8 +105,8 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:paddingTop="62dp"
+                android:gravity="center"
+                android:paddingTop="68dp"
                 android:text="보관함"
                 android:textColor="#80ffffff" />
 
@@ -122,8 +122,8 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:paddingTop="62dp"
+                android:gravity="center"
+                android:paddingTop="68dp"
                 android:text="설정"
                 android:textColor="#80ffffff" />
 
