@@ -27,12 +27,12 @@ public class SettingsActivity extends AppCompatActivity {
         spinner1.setAdapter(adapter1);
 
         Spinner spinner2 = findViewById(R.id.spinner2);
-        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, detail2);
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, detail2);
         spinner2.setAdapter(adapter2);
 
 
         Spinner spinner3 = findViewById(R.id.spinner3);
-        ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, detail3);
+        ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, detail3);
         spinner3.setAdapter(adapter3);
 
         toolMain = findViewById(R.id.text_tool);
