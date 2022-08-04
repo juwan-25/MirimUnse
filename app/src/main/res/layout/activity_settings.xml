@@ -123,7 +123,7 @@
                 android:layout_width="0dp"
                 android:layout_height="85dp"
                 android:layout_weight="1"
-                android:src="@drawable/mainbtn_img"/>
+                android:src="@drawable/mainunbtn_img"/>
             <TextView
                 android:id="@+id/text_tool"
                 android:layout_width="0dp"
@@ -132,7 +132,7 @@
                 android:gravity="center_horizontal"
                 android:paddingTop="62dp"
                 android:text="설정"
-                android:textColor="#80ffffff"/>
+                android:textColor="#E7998D"/>
         </LinearLayout>
     </FrameLayout>
 </LinearLayout>
