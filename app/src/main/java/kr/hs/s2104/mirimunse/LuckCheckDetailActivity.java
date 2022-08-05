@@ -2,12 +2,14 @@ package kr.hs.s2104.mirimunse;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.icu.text.LocaleDisplayNames;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -102,13 +104,18 @@ public class LuckCheckDetailActivity extends AppCompatActivity {
         dlg1.findViewById(R.id.btn_sp).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //제목과 함꼐 카드 뽑은 내용이 저장
-                db.execSQL("INSERT INTO RecordFortunes values(" +
-                        editSave + ", " + fortuneTit + ", "+fortuneCont+", "+fortuneImg+
-                        ")");
+                //제목과 함께 카드 뽑은 내용이 저장
+                Log.d(this.getClass().getName(), "***저장버튼 클릭");
+//                db.execSQL("INSERT INTO RecordFortunes values(" +
+//                        editSave + ", " + fortuneTit + ", "+fortuneCont+", "+fortuneImg+
+//                        ")");
 
                 Toast toast = Toast.makeText(getApplicationContext(), "저장에 성공했습니다!", Toast.LENGTH_SHORT);
                 toast.show();
+
+                Intent intent = new Intent(getApplicationContext(), LuckRecordActivity.class);
+                startActivity(intent);
+
                 dlg1.dismiss();
             }
         });
