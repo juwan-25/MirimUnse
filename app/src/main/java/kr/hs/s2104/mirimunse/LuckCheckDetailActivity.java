@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,6 +26,7 @@ public class LuckCheckDetailActivity extends AppCompatActivity {
     ImageView cardDetail;
     TextView textCheckTit, textCheckCont;
     DatabaseHelper dbHelper;
+    EditText unseName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +34,7 @@ public class LuckCheckDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_luck_check_detail);
 
         dbHelper = new DatabaseHelper(this);
+        unseName = findViewById(R.id.unse_title);
 
         toolMain = findViewById(R.id.text_tool);
         toolMain.setOnClickListener(new View.OnClickListener() {
@@ -97,6 +100,9 @@ public class LuckCheckDetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //제목과 함꼐 카드 뽑은 내용이 저장
+                Intent intent = new Intent(getApplicationContext(), LuckRecordActivity.class);
+                intent.putExtra("unsetitle", unseName.getText().toString());
+                startActivity(intent);
                 Toast toast = Toast.makeText(getApplicationContext(), "저장에 성공했습니다!", Toast.LENGTH_SHORT);
                 toast.show();
                 dlg1.dismiss();
