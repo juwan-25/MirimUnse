@@ -5,16 +5,16 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    private static String DB_NAME = "MirimUnsae.db";
-
     //DB 생성
     public DatabaseHelper(Context context) {
-        super(context, DB_NAME, null, 1);
+        super(context, "MirimUnsae.db", null, 1);
+        Log.d(this.getClass().getName() ,"***DatabaseHelper 생성자 실행");
     }
 
     @Override

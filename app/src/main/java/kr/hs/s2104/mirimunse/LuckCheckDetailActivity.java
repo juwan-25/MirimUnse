@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,14 +25,19 @@ public class LuckCheckDetailActivity extends AppCompatActivity {
     ImageView btnSave, btnShare;
     ImageView cardDetail;
     TextView textCheckTit, textCheckCont;
+    EditText editSave;
+
     DatabaseHelper dbHelper;
+    SQLiteDatabase db;
+
+    String fortuneTit, fortuneCont;
+    int fortuneImg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_luck_check_detail);
-
-        dbHelper = new DatabaseHelper(this);
+        editSave = findViewById(R.id.edit_save);
 
         toolMain = findViewById(R.id.text_tool);
         toolMain.setOnClickListener(new View.OnClickListener() {
@@ -64,18 +70,19 @@ public class LuckCheckDetailActivity extends AppCompatActivity {
         textCheckTit = findViewById(R.id.text_check_tit);
         textCheckCont = findViewById(R.id.text_check_cont);
 
-//        SQLiteDatabase db = dbHelper.getReadableDatabase();
-//        Cursor c = db.rawQuery("SELECT * FROM ContentsFortunes;", null);
-//
-//        //랜덤 기능
-//        Random random = new Random();
-//        int i = (int)(Math.random()*9)+1;
-//        for(int j=0; j<i; j++) c.moveToNext();
-//
-//        textCheckTit.setText(c.getString(1));
-//        textCheckCont.setText(c.getString(2));
-//        cardDetail.setImageResource(c.getInt(3));
+        //랜덤 기능
+        dbHelper = new DatabaseHelper(this);
+        db = dbHelper.getWritableDatabase();
+        Cursor c = db.rawQuery("SELECT * FROM ContentsFortunes;", null);
+        for(int j=0; j<(int)(Math.random()*9)+1; j++) c.moveToNext();
 
+        fortuneTit = c.getString(1);
+        fortuneCont = c.getString(2);
+        fortuneImg = c.getInt(3);
+
+        textCheckTit.setText(fortuneTit);
+        textCheckCont.setText(fortuneCont);
+        cardDetail.setImageResource(fortuneImg);
 
         dlg1 = new Dialog(this);
         dlg1.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -88,7 +95,6 @@ public class LuckCheckDetailActivity extends AppCompatActivity {
                 showDlg1();
             }
         });
- //       db.close();
     }
 
     public void showDlg1(){
@@ -97,6 +103,10 @@ public class LuckCheckDetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //제목과 함꼐 카드 뽑은 내용이 저장
+                db.execSQL("INSERT INTO RecordFortunes values(" +
+                        editSave + ", " + fortuneTit + ", "+fortuneCont+", "+fortuneImg+
+                        ")");
+
                 Toast toast = Toast.makeText(getApplicationContext(), "저장에 성공했습니다!", Toast.LENGTH_SHORT);
                 toast.show();
                 dlg1.dismiss();
