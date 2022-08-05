@@ -24,18 +24,16 @@ public class LuckRecordActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_luck_record);
 
-        ListView listView = findViewById(R.id.listv);
+        Intent intent = getIntent();
+        TextView textView = findViewById(R.id.textv);
+        String name = intent.getStringExtra("unsetitle");
+        textView.setText(name);
 
-        List<String> list = new ArrayList<>();
-        list.add("22.08.05 OO이의 운세");
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<String >(this, android.R.layout.simple_list_item_1, list);
-        listView.setAdapter(adapter);
-
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        textView.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                String data = (String) adapterView.getItemAtPosition(position);
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), LuckCheckDetailActivity.class);
+                startActivity(intent);
             }
         });
 

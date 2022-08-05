@@ -24,7 +24,6 @@
         android:fontFamily="@font/notoserif"
         android:text="운세 결과의 제목을 적어보세요!"/>
     <EditText
-        android:id="@+id/edit_save"
         android:layout_width="270dp"
         android:layout_height="45dp"
         android:textSize="16dp"
