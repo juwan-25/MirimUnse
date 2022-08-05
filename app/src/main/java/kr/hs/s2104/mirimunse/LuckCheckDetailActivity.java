@@ -10,7 +10,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.icu.text.LocaleDisplayNames;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
@@ -39,6 +41,9 @@ public class LuckCheckDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_luck_check_detail);
+
+        LayoutInflater inflater = (LayoutInflater)getApplicationContext().getSystemService(LAYOUT_INFLATER_SERVICE);
+        final View layout = inflater.inflate(R.layout.dialog01, findViewById(R.id.edit_save));
         editSave = findViewById(R.id.edit_save);
 
         toolMain = findViewById(R.id.text_tool);
@@ -105,16 +110,15 @@ public class LuckCheckDetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //제목과 함께 카드 뽑은 내용이 저장
-                Log.d(this.getClass().getName(), "***저장버튼 클릭");
-//                db.execSQL("INSERT INTO RecordFortunes values(" +
-//                        editSave + ", " + fortuneTit + ", "+fortuneCont+", "+fortuneImg+
-//                        ")");
-
                 Toast toast = Toast.makeText(getApplicationContext(), "저장에 성공했습니다!", Toast.LENGTH_SHORT);
                 toast.show();
 
                 Intent intent = new Intent(getApplicationContext(), LuckRecordActivity.class);
                 startActivity(intent);
+
+//                db.execSQL("INSERT INTO RecordFortunes values('" +
+//                        editSave.getText() + "', '" + fortuneTit + "', '"+fortuneCont+"', "+fortuneImg+
+//                        ")");
 
                 dlg1.dismiss();
             }
@@ -125,5 +129,8 @@ public class LuckCheckDetailActivity extends AppCompatActivity {
                 dlg1.dismiss();
             }
         });
+
+        db.close();
+
     }
 }
