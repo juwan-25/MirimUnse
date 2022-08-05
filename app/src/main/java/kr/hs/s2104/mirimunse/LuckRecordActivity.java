@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -27,17 +28,6 @@ public class LuckRecordActivity extends AppCompatActivity {
 
         List<String> list = new ArrayList<>();
         list.add("22.08.05 OO이의 운세");
-        list.add("22.08.04 OO이의 운세");
-        list.add("22.08.02 OO이의 운세");
-        list.add("22.08.05 OO이의 운세");
-        list.add("22.08.04 OO이의 운세");
-        list.add("22.08.02 OO이의 운세");
-        list.add("22.08.05 OO이의 운세");
-        list.add("22.08.04 OO이의 운세");
-        list.add("22.08.02 OO이의 운세");
-        list.add("22.08.05 OO이의 운세");
-        list.add("22.08.04 OO이의 운세");
-        list.add("22.08.02 OO이의 운세");
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String >(this, android.R.layout.simple_list_item_1, list);
         listView.setAdapter(adapter);
