@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.icu.text.LocaleDisplayNames;
 import android.os.Bundle;
 import android.view.View;
@@ -12,16 +14,23 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.Random;
+
 public class LuckCheckDetailActivity extends AppCompatActivity {
     ImageView checkMain;
     TextView recordMain, toolMain;
     Dialog dlg1;
-    ImageView btnSave;
+    ImageView btnSave, btnShare;
+    ImageView cardDetail;
+    TextView textCheckTit, textCheckCont;
+    DatabaseHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_luck_check_detail);
+
+        dbHelper = new DatabaseHelper(this);
 
         toolMain = findViewById(R.id.text_tool);
         toolMain.setOnClickListener(new View.OnClickListener() {
@@ -50,6 +59,23 @@ public class LuckCheckDetailActivity extends AppCompatActivity {
             }
         });
 
+        cardDetail = findViewById(R.id.card_detail);
+        textCheckTit = findViewById(R.id.text_check_tit);
+        textCheckCont = findViewById(R.id.text_check_cont);
+
+//        SQLiteDatabase db = dbHelper.getReadableDatabase();
+//        Cursor c = db.rawQuery("SELECT * FROM ContentsFortunes;", null);
+//
+//        //랜덤 기능
+//        Random random = new Random();
+//        int i = (int)(Math.random()*9)+1;
+//        for(int j=0; j<i; j++) c.moveToNext();
+//
+//        textCheckTit.setText(c.getString(1));
+//        textCheckCont.setText(c.getString(2));
+//        cardDetail.setImageResource(c.getInt(3));
+
+
         dlg1 = new Dialog(this);
         dlg1.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dlg1.setContentView(R.layout.dialog01);
@@ -61,6 +87,7 @@ public class LuckCheckDetailActivity extends AppCompatActivity {
                 showDlg1();
             }
         });
+ //       db.close();
     }
 
     public void showDlg1(){
