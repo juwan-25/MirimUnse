@@ -13,6 +13,7 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Random;
 
@@ -96,6 +97,8 @@ public class LuckCheckDetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //제목과 함꼐 카드 뽑은 내용이 저장
+                Toast toast = Toast.makeText(getApplicationContext(), "저장에 성공했습니다!", Toast.LENGTH_SHORT);
+                toast.show();
                 dlg1.dismiss();
             }
         });
