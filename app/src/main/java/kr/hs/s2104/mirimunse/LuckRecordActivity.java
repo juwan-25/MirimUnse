@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LuckRecordActivity extends AppCompatActivity {
-    TextView toolMain;
+    TextView toolMain, unseRecord;
     ImageView checkMain;
 
     @Override
@@ -28,6 +28,8 @@ public class LuckRecordActivity extends AppCompatActivity {
         TextView textView = findViewById(R.id.textv);
         String name = intent.getStringExtra("unsetitle");
         textView.setText(name);
+
+        unseRecord = findViewById(R.id.textv);
 
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
