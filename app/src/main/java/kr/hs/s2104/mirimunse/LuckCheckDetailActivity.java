@@ -67,17 +67,17 @@ public class LuckCheckDetailActivity extends AppCompatActivity {
         textCheckTit = findViewById(R.id.text_check_tit);
         textCheckCont = findViewById(R.id.text_check_cont);
 
-//        SQLiteDatabase db = dbHelper.getReadableDatabase();
-//        Cursor c = db.rawQuery("SELECT * FROM ContentsFortunes;", null);
-//
-//        //랜덤 기능
-//        Random random = new Random();
-//        int i = (int)(Math.random()*9)+1;
-//        for(int j=0; j<i; j++) c.moveToNext();
-//
-//        textCheckTit.setText(c.getString(1));
-//        textCheckCont.setText(c.getString(2));
-//        cardDetail.setImageResource(c.getInt(3));
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        Cursor c = db.rawQuery("SELECT * FROM ContentsFortunes;", null);
+
+        //랜덤 기능
+        Random random = new Random();
+        int i = (int)(Math.random()*9)+1;
+        for(int j=0; j<i; j++) c.moveToNext();
+
+        textCheckTit.setText(c.getString(1));
+        textCheckCont.setText(c.getString(2));
+        cardDetail.setImageResource(c.getInt(3));
 
 
         dlg1 = new Dialog(this);
@@ -100,11 +100,13 @@ public class LuckCheckDetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //제목과 함꼐 카드 뽑은 내용이 저장
-                Intent intent = new Intent(getApplicationContext(), LuckRecordActivity.class);
-                intent.putExtra("unsetitle", unseName.getText().toString());
-                startActivity(intent);
+//                Intent intent = new Intent(getApplicationContext(), LuckRecordActivity.class);
+//                intent.putExtra("unsetitle", unseName.getText().toString());
+//                startActivity(intent);
                 Toast toast = Toast.makeText(getApplicationContext(), "저장에 성공했습니다!", Toast.LENGTH_SHORT);
                 toast.show();
+                Intent intent = new Intent(getApplicationContext(), LuckRecordActivity.class);
+                startActivity(intent);
                 dlg1.dismiss();
             }
         });
