@@ -110,17 +110,18 @@ public class LuckCheckDetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //제목과 함께 카드 뽑은 내용이 저장
-                Toast toast = Toast.makeText(getApplicationContext(), "저장에 성공했습니다!", Toast.LENGTH_SHORT);
-                toast.show();
-
                 Intent intent = new Intent(getApplicationContext(), LuckRecordActivity.class);
                 startActivity(intent);
 
-                Log.d(this.getClass().getName(), "*******************************");
-                db.execSQL("INSERT INTO RecordFotunes values('" +
-                        editSave.getText() + "', '" + fortuneTit + "', '"+fortuneCont+"', "+fortuneImg+
-                        ")");
-                Log.d(this.getClass().getName(), "******************성공!!!!!!!!!!!***************");
+                //pk 예외 처리 필요함
+//                Log.d(this.getClass().getName(), "*******************************");
+//                db.execSQL("INSERT INTO RecordFotunes values('" +
+//                        editSave.getText() + "', '" + fortuneTit + "', '"+fortuneCont+"', "+fortuneImg+
+//                        ")");
+//                Log.d(this.getClass().getName(), "******************성공!!!!!!!!!!!***************");
+
+                Toast toast = Toast.makeText(getApplicationContext(), "저장에 성공했습니다!", Toast.LENGTH_SHORT);
+                toast.show();
 
                 dlg1.dismiss();
             }
