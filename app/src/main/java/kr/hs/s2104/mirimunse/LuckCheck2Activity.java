@@ -21,16 +21,7 @@ public class LuckCheck2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_luck_check2);
 
-        toolMain = findViewById(R.id.text_tool);
-        toolMain.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        cardCheck = findViewById(R.id.card_check);
+        cardCheck = findViewById(R.id.card_check);  // 카드 클릭 시 애니메이션
         cardCheck.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -38,7 +29,6 @@ public class LuckCheck2Activity extends AppCompatActivity {
                 cardCheck.startAnimation(animation);
             }
         });
-
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -47,8 +37,16 @@ public class LuckCheck2Activity extends AppCompatActivity {
             }
         }, 4000);
 
-        //하단바 연결
-        checkMain = findViewById(R.id.btn_check);
+        //하단 바
+        toolMain = findViewById(R.id.text_tool);    // 설정 버튼 연결
+        toolMain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
+                startActivity(intent);
+            }
+        });
+        checkMain = findViewById(R.id.btn_check);   // 홈 버튼 연결
         checkMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -56,8 +54,7 @@ public class LuckCheck2Activity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        recordMain = findViewById(R.id.text_record);
+        recordMain = findViewById(R.id.text_record);    // 보관함 버튼 연결
         recordMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -65,5 +62,6 @@ public class LuckCheck2Activity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
 }

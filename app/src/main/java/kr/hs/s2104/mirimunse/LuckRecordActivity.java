@@ -31,7 +31,7 @@ public class LuckRecordActivity extends AppCompatActivity {
 
         unseRecord = findViewById(R.id.textv);
 
-        textView.setOnClickListener(new View.OnClickListener() {
+        textView.setOnClickListener(new View.OnClickListener() {    // luck_record_detail 연결
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), LuckCheckDetailActivity.class);
@@ -39,16 +39,16 @@ public class LuckRecordActivity extends AppCompatActivity {
             }
         });
 
+        // 하단 바
         toolMain = findViewById(R.id.text_tool);
-        toolMain.setOnClickListener(new View.OnClickListener() {
+        toolMain.setOnClickListener(new View.OnClickListener() {    // 설정 버튼 연결
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
                 startActivity(intent);
             }
         });
-
-        checkMain = findViewById(R.id.btn_check);
+        checkMain = findViewById(R.id.btn_check);   // 홈 버튼 연결
         checkMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -58,5 +58,4 @@ public class LuckRecordActivity extends AppCompatActivity {
         });
 
     }
-
 }

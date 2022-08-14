@@ -24,7 +24,16 @@ public class LuckCheckActivity extends AppCompatActivity {
         card3 = findViewById(R.id.card3);
         card3.setOnClickListener(cardListener);
 
-        toolMain = findViewById(R.id.text_tool);
+        // 하단 바
+        recordMain = findViewById(R.id.text_record);    // 보관함 버튼 연결
+        recordMain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), LuckRecordActivity.class);
+                startActivity(intent);
+            }
+        });
+        toolMain = findViewById(R.id.text_tool);    // 설정 버튼 연결
         toolMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -33,18 +42,9 @@ public class LuckCheckActivity extends AppCompatActivity {
             }
         });
 
-        recordMain = findViewById(R.id.text_record);
-        recordMain.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), LuckRecordActivity.class);
-                startActivity(intent);
-            }
-        });
-
     }
 
-    View.OnClickListener cardListener = new View.OnClickListener() {
+    View.OnClickListener cardListener = new View.OnClickListener() {    // 카드 선택 시 luck_check2 연결
         @Override
         public void onClick(View view) {
             Intent intent = new Intent(getApplicationContext(), LuckCheck2Activity.class);

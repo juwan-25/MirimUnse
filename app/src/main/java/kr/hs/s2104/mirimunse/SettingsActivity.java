@@ -30,12 +30,28 @@ public class SettingsActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, detail2);
         spinner2.setAdapter(adapter2);
 
-
         Spinner spinner3 = findViewById(R.id.spinner3);
         ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, detail3);
         spinner3.setAdapter(adapter3);
 
-        toolMain = findViewById(R.id.text_tool);
+        // 하단 바
+        recordMain = findViewById(R.id.text_record);    // 보관함 버튼 연결
+        recordMain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), LuckRecordActivity.class);
+                startActivity(intent);
+            }
+        });
+        checkMain = findViewById(R.id.btn_check);   // 홈 버튼 연결
+        checkMain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), LuckCheckActivity.class);
+                startActivity(intent);
+            }
+        });
+        toolMain = findViewById(R.id.text_tool);    // 설정 버튼 연결
         toolMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -44,22 +60,5 @@ public class SettingsActivity extends AppCompatActivity {
             }
         });
 
-        checkMain = findViewById(R.id.btn_check);
-        checkMain.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), LuckCheckActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        recordMain = findViewById(R.id.text_record);
-        recordMain.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), LuckRecordActivity.class);
-                startActivity(intent);
-            }
-        });
     }
 }

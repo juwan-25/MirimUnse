@@ -19,7 +19,24 @@ public class LuckRecordDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_luck_record_detail);
 
-        toolMain = findViewById(R.id.text_tool);
+        // 하단 바
+        recordMain = findViewById(R.id.text_record);    // 보관함 버튼 연결
+        recordMain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), LuckRecordActivity.class);
+                startActivity(intent);
+            }
+        });
+        checkMain = findViewById(R.id.btn_check);   // 홈 버튼 연결
+        checkMain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), LuckCheckActivity.class);
+                startActivity(intent);
+            }
+        });
+        toolMain = findViewById(R.id.text_tool);    // 설정 버튼 연결
         toolMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -28,22 +45,5 @@ public class LuckRecordDetailActivity extends AppCompatActivity {
             }
         });
 
-        checkMain = findViewById(R.id.btn_check);
-        checkMain.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), LuckCheckActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        recordMain = findViewById(R.id.text_record);
-        recordMain.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), LuckRecordActivity.class);
-                startActivity(intent);
-            }
-        });
     }
 }

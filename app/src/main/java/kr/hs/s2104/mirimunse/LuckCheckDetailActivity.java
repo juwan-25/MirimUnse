@@ -43,16 +43,17 @@ public class LuckCheckDetailActivity extends AppCompatActivity {
         final View layout = inflater.inflate(R.layout.dialog01, findViewById(R.id.edit_save));
         editSave = layout.findViewById(R.id.edit_save);
 
-        toolMain = findViewById(R.id.text_tool);
-        toolMain.setOnClickListener(new View.OnClickListener() {
+        //하단 바
+
+        recordMain = findViewById(R.id.text_record);    // 보관함 버튼 연결
+        recordMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
+                Intent intent = new Intent(getApplicationContext(), LuckRecordActivity.class);
                 startActivity(intent);
             }
         });
-
-        checkMain = findViewById(R.id.btn_check);
+        checkMain = findViewById(R.id.btn_check);   // 홈 버튼 연결
         checkMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -60,12 +61,11 @@ public class LuckCheckDetailActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        recordMain = findViewById(R.id.text_record);
-        recordMain.setOnClickListener(new View.OnClickListener() {
+        toolMain = findViewById(R.id.text_tool);    // 설정 버튼 연결
+        toolMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), LuckRecordActivity.class);
+                Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
                 startActivity(intent);
             }
         });
