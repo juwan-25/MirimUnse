@@ -3,6 +3,8 @@ package kr.hs.s2104.mirimunse;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -19,19 +21,29 @@ public class LuckRecordActivity extends AppCompatActivity {
     TextView toolMain, unseRecord;
     ImageView checkMain;
 
+    DatabaseHelper dbHelper;
+    SQLiteDatabase db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_luck_record);
 
-        Intent intent = getIntent();
-        TextView textView = findViewById(R.id.textv);
-        String name = intent.getStringExtra("unsetitle");
-        textView.setText(name);
+        dbHelper = new DatabaseHelper(this);
+        db = dbHelper.getWritableDatabase();
+        Cursor c = db.rawQuery("SELECT * FROM ContentsFortunes;", null);
 
+        String unseTitle = c.getString(1); //db에서 운세 title 받아올 용도
         unseRecord = findViewById(R.id.textv);
+        unseRecord.setText(unseTitle); //제일 처음만 xml에서 만든 textView 사용
+        
+        for(int i = 0; i<10; i++){
+            //TextView 새롭게 만드는 코드
+            unseTitle = c.getString(1);
+            //새롭게 만든 TextView.setText(unseTitle);
+        }
 
-        textView.setOnClickListener(new View.OnClickListener() {    // luck_record_detail 연결
+        unseRecord.setOnClickListener(new View.OnClickListener() {    // luck_record_detail 연결
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), LuckCheckDetailActivity.class);

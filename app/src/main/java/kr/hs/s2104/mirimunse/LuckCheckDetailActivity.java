@@ -74,11 +74,11 @@ public class LuckCheckDetailActivity extends AppCompatActivity {
         textCheckTit = findViewById(R.id.text_check_tit);
         textCheckCont = findViewById(R.id.text_check_cont);
 
+        //랜덤 기능
         dbHelper = new DatabaseHelper(this);
         db = dbHelper.getWritableDatabase();
         Cursor c = db.rawQuery("SELECT * FROM ContentsFortunes;", null);
 
-        //랜덤 기능
         Random random = new Random();
         int i = (int)(Math.random()*9)+1;
         for(int j=0; j<i; j++) c.moveToNext();
