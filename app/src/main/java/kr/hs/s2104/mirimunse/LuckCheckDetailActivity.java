@@ -99,7 +99,9 @@ public class LuckCheckDetailActivity extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Log.d(this.getClass().getName(), "*******다이얼로그 실행이 안 되닝?1");
                 showDlg1();
+                Log.d(this.getClass().getName(), "*******다이얼로그 실행이 안 되닝?2");
             }
         });
     }
@@ -110,8 +112,10 @@ public class LuckCheckDetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //제목과 함께 카드 뽑은 내용이 저장
+                Log.d(this.getClass().getName(), "********넘어가기 전이다");
                 Intent intent = new Intent(getApplicationContext(), LuckRecordActivity.class);
                 startActivity(intent);
+                Log.d(this.getClass().getName(), "********제발 이거 떠줘");
 
                 //pk 예외 처리 필요함
 //                Log.d(this.getClass().getName(), "*******************************");
