@@ -38,6 +38,7 @@ public class LuckRecordActivity extends AppCompatActivity {
 
         Cursor cCnt = db.rawQuery("SELECT count(*) FROM ContentsFortunes;", null);
         cCnt.moveToNext();
+
         int recodeCount = cCnt.getInt(0);
         for(int i = 0; i<recodeCount; i++){
             //TextView 새롭게 만드는 코드
