@@ -120,6 +120,7 @@ public class LuckCheckDetailActivity extends AppCompatActivity {
                     dlg1.dismiss();
                     Toast.makeText(LuckCheckDetailActivity.this, "제목을 입력하시오", Toast.LENGTH_SHORT).show();
                 }else{
+                    //제목 제대로 입력했을 경우 실행
                     db.execSQL("INSERT INTO RecordFotunes values('" +
                             editSave.getText() + "', '" + fortuneTit + "', '"+fortuneCont+"', "+fortuneImg+
                             ");");
