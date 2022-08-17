@@ -9,6 +9,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -52,6 +53,12 @@ public class LuckRecordActivity extends AppCompatActivity {
             // 동그란 이미지 생성
             ImageView img_dot = new ImageView(this);
             img_dot.setImageResource(R.drawable.dot);
+            //layout_width, layout_height, gravity 설정
+            LinearLayout.LayoutParams lp_dot = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            lp_dot.gravity = Gravity.LEFT;
+            img_dot.setLayoutParams(lp_dot);
+            //부모 뷰에 추가
+            container.addView(img_dot);
 
             //TextView 생성
             TextView view1 = new TextView(this);
@@ -68,6 +75,12 @@ public class LuckRecordActivity extends AppCompatActivity {
             // 우측 버튼 이미지 생성
             ImageView img_threedot = new ImageView(this);
             img_threedot.setImageResource(R.drawable.threedot);
+            //layout_width, layout_height, gravity 설정
+            LinearLayout.LayoutParams lp_threedot = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            lp_threedot.gravity = Gravity.RIGHT;
+            img_dot.setLayoutParams(lp_threedot);
+            //부모 뷰에 추가
+            container.addView(img_threedot);
 
         }
 
