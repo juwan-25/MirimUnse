@@ -112,22 +112,24 @@ public class LuckCheckDetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //제목과 함께 카드 뽑은 내용이 저장
-                Log.d(this.getClass().getName(), "********넘어가기 전이다");
                 Intent intent = new Intent(getApplicationContext(), LuckRecordActivity.class);
                 startActivity(intent);
-                Log.d(this.getClass().getName(), "********제발 이거 떠줘");
 
-                //pk 예외 처리 필요함
-//                Log.d(this.getClass().getName(), "*******************************");
-//                db.execSQL("INSERT INTO RecordFotunes values('" +
-//                        editSave.getText() + "', '" + fortuneTit + "', '"+fortuneCont+"', "+fortuneImg+
-//                        ")");
-//                Log.d(this.getClass().getName(), "******************성공!!!!!!!!!!!***************");
+                if ( editSave.getText().toString().length() == 0 ) {
+                    //Null 대응 처리 제대로 해줘야함
+                    dlg1.dismiss();
+                    Toast.makeText(LuckCheckDetailActivity.this, "제목을 입력하시오", Toast.LENGTH_SHORT).show();
+                }else{
+                    db.execSQL("INSERT INTO RecordFotunes values('" +
+                            editSave.getText() + "', '" + fortuneTit + "', '"+fortuneCont+"', "+fortuneImg+
+                            ");");
+                    Log.d(this.getClass().getName(), "******************성공!!!!!!!!!!!***************");
 
-                Toast toast = Toast.makeText(getApplicationContext(), "저장에 성공했습니다!", Toast.LENGTH_SHORT);
-                toast.show();
+                    Toast toast = Toast.makeText(getApplicationContext(), "저장에 성공했습니다!", Toast.LENGTH_SHORT);
+                    toast.show();
 
-                dlg1.dismiss();
+                    dlg1.dismiss();
+                }
             }
         });
         dlg1.findViewById(R.id.btn_sn).setOnClickListener(new View.OnClickListener() {
