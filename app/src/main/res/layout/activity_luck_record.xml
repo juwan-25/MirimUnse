@@ -6,7 +6,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/background"
+    android:id="@+id/parent"
     tools:context=".LuckCheckDetailActivity">
+    // LinearLayout id parent
     <!--툴바-->
     <FrameLayout
         android:layout_width="wrap_content"
