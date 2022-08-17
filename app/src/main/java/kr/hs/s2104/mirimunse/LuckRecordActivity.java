@@ -31,15 +31,17 @@ public class LuckRecordActivity extends AppCompatActivity {
 
         dbHelper = new DatabaseHelper(this);
         db = dbHelper.getWritableDatabase();
-        Cursor c = db.rawQuery("SELECT * FROM ContentsFortunes;", null);
+        Cursor cTitle = db.rawQuery("SELECT * FROM ContentsFortunes;", null);
 
-        String unseTitle = c.getString(1); //db에서 운세 title 받아올 용도
+        String unseTitle = cTitle.getString(1); //db에서 운세 title 받아올 용도
         unseRecord = findViewById(R.id.textv);
         unseRecord.setText(unseTitle); //제일 처음만 xml에서 만든 textView 사용
-        
-        for(int i = 0; i<10; i++){
+
+        Cursor cCnt = db.rawQuery("SELECT count(*) FROM ContentsFortunes;", null);
+        int recodeCount = cCnt.getInt(0);
+        for(int i = 0; i<recodeCount; i++){
             //TextView 새롭게 만드는 코드
-            unseTitle = c.getString(1);
+            unseTitle = cTitle.getString(1);
             //새롭게 만든 TextView.setText(unseTitle);
         }
 
