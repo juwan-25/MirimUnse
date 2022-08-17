@@ -31,7 +31,8 @@
         android:paddingHorizontal="25dp"
         android:textColor="@color/btn_color"
         android:fontFamily="@font/notoserif"
-        android:background="@drawable/edit_dlg"/>
+        android:background="@drawable/edit_dlg"
+        android:text="제목을 입력해주세요."/>
 
 
     <LinearLayout

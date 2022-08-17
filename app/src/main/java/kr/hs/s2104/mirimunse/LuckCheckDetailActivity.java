@@ -99,9 +99,7 @@ public class LuckCheckDetailActivity extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d(this.getClass().getName(), "*******다이얼로그 실행이 안 되닝?1");
                 showDlg1();
-                Log.d(this.getClass().getName(), "*******다이얼로그 실행이 안 되닝?2");
             }
         });
     }
@@ -121,13 +119,13 @@ public class LuckCheckDetailActivity extends AppCompatActivity {
                     Toast.makeText(LuckCheckDetailActivity.this, "제목을 입력하시오", Toast.LENGTH_SHORT).show();
                 }else{
                     //제목 제대로 입력했을 경우 실행
+                    Toast toast = Toast.makeText(getApplicationContext(), "저장에 성공했습니다!", Toast.LENGTH_SHORT);
+                    toast.show();
+
                     db.execSQL("INSERT INTO RecordFotunes values('" +
                             editSave.getText() + "', '" + fortuneTit + "', '"+fortuneCont+"', "+fortuneImg+
                             ");");
                     Log.d(this.getClass().getName(), "******************성공!!!!!!!!!!!***************");
-
-                    Toast toast = Toast.makeText(getApplicationContext(), "저장에 성공했습니다!", Toast.LENGTH_SHORT);
-                    toast.show();
 
                     dlg1.dismiss();
                 }
