@@ -16,11 +16,12 @@ import android.widget.TextView;
 
 public class LuckRecordActivity extends AppCompatActivity {
 
-    private static final float FONT_SIZE = 10;
-    private LinearLayout container;
+    private static final float FONT_SIZE = 15;
+    private LinearLayout container; // 부모 뷰
 
     TextView toolMain, unseRecord;
     ImageView checkMain;
+    LinearLayout list;
 
     DatabaseHelper dbHelper;
     SQLiteDatabase db;
@@ -32,7 +33,10 @@ public class LuckRecordActivity extends AppCompatActivity {
 
         dbHelper = new DatabaseHelper(this);
         db = dbHelper.getWritableDatabase();
+        list = findViewById(R.id.original_list);
         unseRecord = findViewById(R.id.textv);
+
+        list.setVisibility(View.INVISIBLE);
 
         Cursor cCnt = db.rawQuery("SELECT count(*) FROM RecordFotunes;", null);
         cCnt.moveToNext();
@@ -50,39 +54,30 @@ public class LuckRecordActivity extends AppCompatActivity {
             //TextView 새롭게 만드는 코드
             //새롭게 만든 TextView.setText(unseTitle);
 
-            // 동그란 이미지 생성
-            ImageView img_dot = new ImageView(this);
-            img_dot.setImageResource(R.drawable.dot);
-            //layout_width, layout_height, gravity 설정
-            LinearLayout.LayoutParams lp_dot = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-            lp_dot.gravity = Gravity.LEFT;
-            img_dot.setLayoutParams(lp_dot);
-            //부모 뷰에 추가
-            container.addView(img_dot);
-
             //TextView 생성
             TextView view1 = new TextView(this);
             view1.setText(unseTitle);
             view1.setTextSize(FONT_SIZE);
+            view1.setCompoundDrawablesWithIntrinsicBounds( R.drawable.dot, 0, R.drawable.threedot, 0);  // 양쪽 버튼 이미지
             view1.setTextColor(Color.rgb(251,218,218)); //글자색상 rgb로 코드 변환
             //layout_width, layout_height, gravity 설정
-            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+
             lp.gravity = Gravity.CENTER;
             view1.setLayoutParams(lp);
             //부모 뷰에 추가
             container.addView(view1);
 
-            // 우측 버튼 이미지 생성
-            ImageView img_threedot = new ImageView(this);
-            img_threedot.setImageResource(R.drawable.threedot);
-            //layout_width, layout_height, gravity 설정
-            LinearLayout.LayoutParams lp_threedot = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-            lp_threedot.gravity = Gravity.RIGHT;
-            img_dot.setLayoutParams(lp_threedot);
-            //부모 뷰에 추가
-            container.addView(img_threedot);
-
         }
+
+        /*TextView view_img = new TextView(this);
+        view_img.setCompoundDrawablesWithIntrinsicBounds( 0, 0, 0, R.drawable.mainunbtn_img);  // 하단 버튼 이미지
+        //layout_width, layout_height, gravity 설정
+        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
+        lp.gravity = Gravity.BOTTOM;
+        view_img.setLayoutParams(lp);
+        //부모 뷰에 추가
+        container.addView(view_img);*/
 
         unseRecord.setOnClickListener(new View.OnClickListener() {    // luck_record_detail 연결
             @Override
