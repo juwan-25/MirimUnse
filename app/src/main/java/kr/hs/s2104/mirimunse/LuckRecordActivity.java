@@ -24,6 +24,7 @@ public class LuckRecordActivity extends AppCompatActivity {
     LinearLayout list;
     DatabaseHelper dbHelper;
     SQLiteDatabase db;
+    LinearLayout Record;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +36,7 @@ public class LuckRecordActivity extends AppCompatActivity {
         list = findViewById(R.id.original_list);
         unseRecord = findViewById(R.id.textv);
 
-        list.setVisibility(View.INVISIBLE);
+        list.setVisibility(View.INVISIBLE); // 기본 목록 텍스트뷰 안 보이게 설정
 
         Cursor cCnt = db.rawQuery("SELECT count(*) FROM RecordFotunes;", null);
         cCnt.moveToNext();
@@ -69,9 +70,11 @@ public class LuckRecordActivity extends AppCompatActivity {
             //부모 뷰에 추가
             container.addView(view1);
 
+            Record = findViewById(R.id.parent);
+
         }
 
-        unseRecord.setOnClickListener(new View.OnClickListener() {    // luck_record_detail 연결
+        Record.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), LuckCheckDetailActivity.class);
