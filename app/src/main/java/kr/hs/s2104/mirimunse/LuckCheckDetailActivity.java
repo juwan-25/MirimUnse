@@ -122,7 +122,7 @@ public class LuckCheckDetailActivity extends AppCompatActivity {
                     Toast toast = Toast.makeText(getApplicationContext(), "저장에 성공했습니다!", Toast.LENGTH_SHORT);
                     toast.show();
 
-                    db.execSQL("insert into RecordFotunes values('안녕', '김ㅇㄴ서','나는지민',0);");
+                    db.execSQL("insert into RecordFotunes values('안녕', '김윤서','나는지민',0);");
 //                    db.execSQL("INSERT INTO RecordFotunes values('" +
 //                            editSave.getText() + "', '" + fortuneTit + "', '"+fortuneCont+"', "+fortuneImg+
 //                            ");");
