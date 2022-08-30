@@ -77,7 +77,7 @@ public class LuckRecordActivity extends AppCompatActivity {
         Record.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), LuckCheckDetailActivity.class);
+                Intent intent = new Intent(getApplicationContext(), LuckRecordDetailActivity.class);
                 startActivity(intent);
             }
         });
