@@ -34,6 +34,8 @@ public class LuckCheckDetailActivity extends AppCompatActivity {
     String fortuneTit, fortuneCont;
     int fortuneImg;
 
+    CustomDialog dialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +43,6 @@ public class LuckCheckDetailActivity extends AppCompatActivity {
 
         LayoutInflater inflater = (LayoutInflater)getApplicationContext().getSystemService(LAYOUT_INFLATER_SERVICE);
         final View layout = inflater.inflate(R.layout.dialog01, findViewById(R.id.edit_save));
-        editSave = layout.findViewById(R.id.edit_save);
 
         //하단 바
 
@@ -91,52 +92,16 @@ public class LuckCheckDetailActivity extends AppCompatActivity {
         textCheckCont.setText(fortuneCont);
         cardDetail.setImageResource(fortuneImg);
 
-        dlg1 = new Dialog(this);
-        dlg1.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dlg1.setContentView(R.layout.dialog01);
-
         btnSave = findViewById(R.id.btn_save);
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showDlg1();
+                dialog = new CustomDialog(getApplicationContext());
+//                dialog.show();
+                Toast.makeText(LuckCheckDetailActivity.this, "버튼 클릭!", Toast.LENGTH_SHORT).show();
             }
         });
     }
 
-    public void showDlg1(){
-        dlg1.show();
-        dlg1.findViewById(R.id.btn_sp).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //제목과 함께 카드 뽑은 내용이 저장
-                Intent intent = new Intent(getApplicationContext(), LuckRecordActivity.class);
-                startActivity(intent);
 
-                if ( editSave.getText().toString().length() == 0 ) {
-                    //Null 대응 처리 제대로 해줘야함
-                    dlg1.dismiss();
-                    Toast.makeText(LuckCheckDetailActivity.this, "제목을 입력하시오", Toast.LENGTH_SHORT).show();
-                }else{
-                    //제목 제대로 입력했을 경우 실행
-                    Toast toast = Toast.makeText(getApplicationContext(), "저장에 성공했습니다!", Toast.LENGTH_SHORT);
-                    toast.show();
-
-                    db.execSQL("insert into RecordFotunes values('안녕', '김윤서','나는지민',0);");
-//                    db.execSQL("INSERT INTO RecordFotunes values('" +
-//                            editSave.getText() + "', '" + fortuneTit + "', '"+fortuneCont+"', "+fortuneImg+
-//                            ");");
-                    Log.d(this.getClass().getName(), "******************성공!!!!!!!!!!!***************");
-
-                    dlg1.dismiss();
-                }
-            }
-        });
-        dlg1.findViewById(R.id.btn_sn).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dlg1.dismiss();
-            }
-        });
-    }
 }
