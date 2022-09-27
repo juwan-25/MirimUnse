@@ -3,6 +3,7 @@ package kr.hs.s2104.mirimunse;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.view.View;
 import android.view.Window;
@@ -13,24 +14,40 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 
 public class CustomDialog extends Dialog implements DialogInterface.OnClickListener {
-    Button btn_save, btn_cancel;
+    private Context dContext;
+
+    Button btnSave, btnCancel;
     EditText editSave;
 
     DatabaseHelper dbHelper;
     SQLiteDatabase db;
 
+    String fortuneTit, fortuneCont;
+    int fortuneImg;
+
+    public CustomDialog(@NonNull Context context, String fortuneTit, String fortuneCont, int fortuneImg) {
+        super(context);
+        this.fortuneTit = fortuneTit;
+        this.fortuneCont = fortuneCont;
+        this.fortuneImg = fortuneImg;
+    }
+
     public CustomDialog(@NonNull Context context) {
         super(context);
+    }
 
+
+    public void showDialog(){
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.dialog01);
+        show();
 
         editSave = findViewById(R.id.edit_save);
-        btn_save = findViewById(R.id.btn_sp);
-        btn_cancel = findViewById(R.id.btn_sn);
+        btnSave = findViewById(R.id.btn_sp);
+        btnCancel = findViewById(R.id.btn_sn);
 
-        btn_save.setOnClickListener(btnListener);
-        btn_cancel.setOnClickListener(btnListener);
+        btnSave.setOnClickListener(btnListener);
+        btnCancel.setOnClickListener(btnListener);
     }
 
     View.OnClickListener btnListener = new View.OnClickListener() {
@@ -45,8 +62,8 @@ public class CustomDialog extends Dialog implements DialogInterface.OnClickListe
                             editSave.getText().toString() + "', '" + "1" + "', '"+"2"+"', "+"3"+
                             ");");
 
-                    Toast toast = Toast.makeText(getContext(), "저장에 성공했습니다!"+editSave.getText().toString(), Toast.LENGTH_SHORT);
-                    toast.show();
+                    //Intent intent = new Intent(dContext, LuckRecordActivity.class);
+                    //dContext.startActivity(intent);
 
                     dismiss();
                 case R.id.btn_sn:
