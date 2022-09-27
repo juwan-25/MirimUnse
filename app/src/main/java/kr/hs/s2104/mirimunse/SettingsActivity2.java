@@ -1,8 +1,5 @@
 package kr.hs.s2104.mirimunse;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NotificationCompat;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,7 +8,9 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-public class SettingsActivity extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class SettingsActivity2 extends AppCompatActivity {
     ImageView checkMain;
     TextView recordMain, toolMain;
     String[] detail1 = {"개발툴", "Android Studio Java"};
@@ -56,7 +55,7 @@ public class SettingsActivity extends AppCompatActivity {
         toolMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
+                Intent intent = new Intent(getApplicationContext(), SettingsActivity2.class);
                 startActivity(intent);
             }
         });

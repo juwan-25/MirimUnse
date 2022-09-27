@@ -25,6 +25,16 @@
             android:src="@drawable/logo"/>
     </FrameLayout>
 
+    // 환영 메시지
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:paddingTop="20dp"
+        android:text="님 환영합니다!"
+        android:textColor="@color/white"
+        android:textSize="23dp"/>
+
     <LinearLayout
         android:layout_width="337dp"
         android:layout_height="0dp"
@@ -100,10 +110,10 @@
             <Switch
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:layout_marginTop="240dp"
+                android:layout_marginTop="200dp"
                 android:fontFamily="@font/notoserif"
                 android:minHeight="48dp"
-                android:text="알림켜기  "
+                android:text="알림켜기"
                 android:textColor="@color/white"
                 android:textSize="13dp"
                 android:thumb="@drawable/switch_thumb"
@@ -115,7 +125,7 @@
     <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_weight="0.35">
+        android:layout_weight="0.39">
         <ImageView
             android:paddingTop="45dp"
             android:layout_width="match_parent"
