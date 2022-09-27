@@ -49,7 +49,7 @@ public class LuckRecordActivity extends AppCompatActivity {
 
         for(int i = 0; i<recodeCount; i++){
             cTitle.moveToNext();
-            unseTitle = cTitle.getString(1);
+            unseTitle = cTitle.getString(0);
             if(i==0) unseRecord.setText(unseTitle);
             //TextView 새롭게 만드는 코드
             //새롭게 만든 TextView.setText(unseTitle);

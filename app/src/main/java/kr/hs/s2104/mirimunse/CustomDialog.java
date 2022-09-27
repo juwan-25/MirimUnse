@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.view.View;
 import android.view.Window;
@@ -59,12 +60,11 @@ public class CustomDialog extends Dialog implements DialogInterface.OnClickListe
             switch (v.getId()){
                 case R.id.btn_sp:
                     db.execSQL("INSERT INTO RecordFotunes values('" +
-                            editSave.getText().toString() + "', '" + "1" + "', '"+"2"+"', "+"3"+
+                            editSave.getText().toString() + "', '" + fortuneTit + "', '"+fortuneCont+"', "+fortuneImg+
                             ");");
-
-                    //Intent intent = new Intent(dContext, LuckRecordActivity.class);
-                    //dContext.startActivity(intent);
-
+                    Toast.makeText(getContext(), "저장 성공", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(dContext, LuckRecordActivity.class);
+                    dContext.startActivity(intent);
                     dismiss();
                 case R.id.btn_sn:
                     dismiss();
