@@ -15,8 +15,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 
 public class CustomDialog extends Dialog implements DialogInterface.OnClickListener {
-    private Context dContext;
-
     Button btnSave, btnCancel;
     EditText editSave;
 
@@ -63,12 +61,14 @@ public class CustomDialog extends Dialog implements DialogInterface.OnClickListe
                             editSave.getText().toString() + "', '" + fortuneTit + "', '"+fortuneCont+"', "+fortuneImg+
                             ");");
                     Toast.makeText(getContext(), "저장 성공", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(dContext, LuckRecordActivity.class);
-                    dContext.startActivity(intent);
                     dismiss();
+
                 case R.id.btn_sn:
                     dismiss();
             }
+
+            Intent intent = new Intent(getContext(), LuckRecordActivity.class);
+            getContext().startActivity(intent);
         }
     };
 
