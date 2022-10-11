@@ -1,5 +1,4 @@
 package kr.hs.s2104.mirimunse;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -66,6 +65,5 @@ public class LuckRecordDetailActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
 }
