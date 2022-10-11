@@ -3,8 +3,6 @@ package kr.hs.s2104.mirimunse;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.view.View;
 import android.view.Window;
@@ -15,38 +13,24 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 
 public class CustomDialog extends Dialog implements DialogInterface.OnClickListener {
-    Button btnSave, btnCancel;
+    Button btn_save, btn_cancel;
     EditText editSave;
 
     DatabaseHelper dbHelper;
     SQLiteDatabase db;
 
-    String fortuneTit, fortuneCont;
-    int fortuneImg;
-
-    public CustomDialog(@NonNull Context context, String fortuneTit, String fortuneCont, int fortuneImg) {
-        super(context);
-        this.fortuneTit = fortuneTit;
-        this.fortuneCont = fortuneCont;
-        this.fortuneImg = fortuneImg;
-    }
-
     public CustomDialog(@NonNull Context context) {
         super(context);
-    }
 
-
-    public void showDialog(){
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.dialog01);
-        show();
 
         editSave = findViewById(R.id.edit_save);
-        btnSave = findViewById(R.id.btn_sp);
-        btnCancel = findViewById(R.id.btn_sn);
+        btn_save = findViewById(R.id.btn_sp);
+        btn_cancel = findViewById(R.id.btn_sn);
 
-        btnSave.setOnClickListener(btnListener);
-        btnCancel.setOnClickListener(btnListener);
+        btn_save.setOnClickListener(btnListener);
+        btn_cancel.setOnClickListener(btnListener);
     }
 
     View.OnClickListener btnListener = new View.OnClickListener() {
@@ -58,17 +42,16 @@ public class CustomDialog extends Dialog implements DialogInterface.OnClickListe
             switch (v.getId()){
                 case R.id.btn_sp:
                     db.execSQL("INSERT INTO RecordFotunes values('" +
-                            editSave.getText().toString() + "', '" + fortuneTit + "', '"+fortuneCont+"', "+fortuneImg+
+                            editSave.getText().toString() + "', '" + "1" + "', '"+"2"+"', "+"3"+
                             ");");
-                    Toast.makeText(getContext(), "저장 성공", Toast.LENGTH_SHORT).show();
-                    dismiss();
 
+                    Toast toast = Toast.makeText(getContext(), "저장에 성공했습니다!"+editSave.getText().toString(), Toast.LENGTH_SHORT);
+                    toast.show();
+
+                    dismiss();
                 case R.id.btn_sn:
                     dismiss();
             }
-
-            Intent intent = new Intent(getContext(), LuckRecordActivity.class);
-            getContext().startActivity(intent);
         }
     };
 

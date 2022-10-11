@@ -75,7 +75,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:background="null"
+                    android:background="@android:color/transparent"
                     android:fontFamily="@font/notoserif"
                     android:textColor="#FBDADA"/>
             </LinearLayout>
@@ -108,7 +108,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:fontFamily="@font/notoserif"
-                    android:background="null"
+                    android:background="@android:color/transparent"
                     android:textColor="#FBDADA"/>
             </LinearLayout>
             <ImageView

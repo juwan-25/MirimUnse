@@ -90,7 +90,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:fontFamily="@font/notoserif"
-                        android:background="null"
+                        android:background="@android:color/transparent"
                         android:textColor="#FBDADA"
                         android:textSize="13dp"/>
                 </FrameLayout>
@@ -123,7 +123,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:fontFamily="@font/notoserif"
-                        android:background="null"
+                        android:background="@android:color/transparent"
                         android:textColor="#FBDADA"
                         android:textSize="13dp"/>
                 </FrameLayout>
@@ -156,7 +156,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:fontFamily="@font/notoserif"
-                        android:background="null"
+                        android:background="@android:color/transparent"
                         android:textColor="#FBDADA"
                         android:textSize="13dp"/>
                 </FrameLayout>
@@ -189,7 +189,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:fontFamily="@font/notoserif"
-                        android:background="null"
+                        android:background="@android:color/transparent"
                         android:textColor="#FBDADA"
                         android:textSize="13dp"/>
                 </FrameLayout>
