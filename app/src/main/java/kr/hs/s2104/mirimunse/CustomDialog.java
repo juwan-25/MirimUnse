@@ -55,6 +55,7 @@ public class CustomDialog extends Dialog implements DialogInterface.OnClickListe
         }
     };
 
+    // 다이얼로그 온클릭
     @Override
     public void onClick(DialogInterface dialog, int which) {
 
