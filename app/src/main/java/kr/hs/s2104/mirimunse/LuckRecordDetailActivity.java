@@ -34,7 +34,7 @@ public class LuckRecordDetailActivity extends AppCompatActivity {
         // 운세 정보 불러오기
         dbHelper = new DatabaseHelper(this);
         db = dbHelper.getWritableDatabase();
-        Cursor c = db.rawQuery("SELECT * FROM RecordFotunes;", null);
+        Cursor c = db.rawQuery("SELECT * FROM RecordFortunes;", null);
         //아이디값만큼 for문 돌리기
         c.moveToNext();
         imgCard.setImageResource(0); //DB에서 이미지 불러오는 문제 해결한 뒤 수정

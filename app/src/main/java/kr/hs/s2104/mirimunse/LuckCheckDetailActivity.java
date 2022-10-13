@@ -23,11 +23,9 @@ import java.util.Random;
 public class LuckCheckDetailActivity extends AppCompatActivity {
     ImageView checkMain;
     TextView recordMain, toolMain;
-    Dialog dlg1;
     ImageView btnSave;
     ImageView cardDetail;
     TextView textCheckTit, textCheckCont;
-    EditText editSave;
 
     DatabaseHelper dbHelper;
     SQLiteDatabase db;
@@ -96,8 +94,8 @@ public class LuckCheckDetailActivity extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                dialog = new CustomDialog(LuckCheckDetailActivity.this, fortuneTit, fortuneCont, fortuneImg);
-                dialog.showDialog();
+                dialog = new CustomDialog(LuckCheckDetailActivity.this);
+                dialog.show();
             }
         });
     }
