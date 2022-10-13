@@ -88,11 +88,33 @@
                 android:layout_height="wrap_content"
                 android:minHeight="48dp"
                 tools:ignore="SpeakableTextPresentCheck" />
+
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="152dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:paddingTop="30dp"
+            android:orientation="horizontal">
+            // 로그인 버튼
+            <Button
+                android:id="@+id/btn_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="로그인"/>
+            // 정보 버튼
+            <Button
+                android:id="@+id/btn_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="정보"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
             android:layout_weight="1"
             android:gravity="center_horizontal"
             android:orientation="horizontal">
@@ -100,7 +122,7 @@
             <Switch
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:layout_marginTop="240dp"
+                android:layout_marginTop="200dp"
                 android:fontFamily="@font/notoserif"
                 android:minHeight="48dp"
                 android:text="알림켜기  "
@@ -108,6 +130,8 @@
                 android:textSize="13dp"
                 android:thumb="@drawable/switch_thumb"
                 android:track="@drawable/switch_selector" />
+
+
         </LinearLayout>
     </LinearLayout>
 

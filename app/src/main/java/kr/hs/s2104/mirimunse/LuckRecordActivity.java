@@ -54,18 +54,15 @@ public class LuckRecordActivity extends AppCompatActivity {
             //TextView 새롭게 만드는 코드
             //새롭게 만든 TextView.setText(unseTitle);
 
+            int cnt= 0; // 초기 카운트 0
             //TextView 생성
             TextView view1 = new TextView(this);
             view1.setText(unseTitle);
             view1.setTextSize(FONT_SIZE);
             view1.setCompoundDrawablesWithIntrinsicBounds( R.drawable.dot, 0, R.drawable.threedot, 0);  // 양쪽 버튼 이미지
             view1.setTextColor(Color.rgb(251,218,218)); //글자색상 rgb로 코드 변환
-
-            //layout_width, layout_height, gravity 설정
-            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-            lp.gravity = Gravity.CENTER;
-            lp.bottomMargin = 40;
-            view1.setLayoutParams(lp);
+            cnt++;  // 새로운 창이 추가될 때 마다 카운트 증가
+            view1.setId(cnt);   // 생성된 창에 아이디 값 부여
 
             //부모 뷰에 추가
             container.addView(view1);
