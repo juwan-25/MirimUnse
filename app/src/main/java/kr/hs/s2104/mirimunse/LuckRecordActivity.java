@@ -32,7 +32,7 @@ public class LuckRecordActivity extends AppCompatActivity {
 
     //동적배열 추가 ArrayList
     List<String> members = new ArrayList<String>();
-    String cppyArray[];
+    String cppyArray[] = new String[members.size()];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +55,7 @@ public class LuckRecordActivity extends AppCompatActivity {
         //부모 뷰
         container = (LinearLayout) findViewById(R.id.parent);
 
-        for(int i = 0; i<recodeCount; i++){
+        for(int i = 0; i<cppyArray.length; i++){
             cTitle.moveToNext();
             unseTitle = cTitle.getString(0);
             if(i==0) unseRecord.setText(unseTitle);
