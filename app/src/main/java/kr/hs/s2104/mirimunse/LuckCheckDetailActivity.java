@@ -23,11 +23,9 @@ import java.util.Random;
 public class LuckCheckDetailActivity extends AppCompatActivity {
     ImageView checkMain;
     TextView recordMain, toolMain;
-    Dialog dlg1;
     ImageView btnSave;
     ImageView cardDetail;
     TextView textCheckTit, textCheckCont;
-    EditText editSave;
 
     DatabaseHelper dbHelper;
     SQLiteDatabase db;
