@@ -71,6 +71,7 @@
                     android:textColor="#FBDADA"
                     android:drawableLeft="@drawable/dot"
                     android:drawablePadding="15dp"
+                    android:paddingBottom="10dp"
                     android:drawableRight="@drawable/threedot"
                     android:textSize="15sp" />
             </LinearLayout>
