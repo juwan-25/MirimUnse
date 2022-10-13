@@ -32,6 +32,7 @@ public class LuckRecordActivity extends AppCompatActivity {
 
     //동적배열 추가 ArrayList
     List<String> members = new ArrayList<String>();
+    String cppyArray[];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,7 +70,7 @@ public class LuckRecordActivity extends AppCompatActivity {
             view1.setTextColor(Color.rgb(251,218,218)); //글자색상 rgb로 코드 변환
 
             //배열에 참조값을 추가하는 코드
-            members.get(i);
+            cppyArray[i] = members.get(i);
 
             //부모 뷰에 추가
             container.addView(view1);
