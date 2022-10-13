@@ -96,8 +96,8 @@ public class LuckCheckDetailActivity extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                dialog = new CustomDialog(LuckCheckDetailActivity.this, fortuneTit, fortuneCont, fortuneImg);
-//                dialog.showDialog();
+                dialog = new CustomDialog(LuckCheckDetailActivity.this);
+                dialog.show();
             }
         });
     }

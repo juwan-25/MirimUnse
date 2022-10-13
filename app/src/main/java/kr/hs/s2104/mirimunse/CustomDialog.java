@@ -3,6 +3,7 @@ package kr.hs.s2104.mirimunse;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.view.View;
 import android.view.Window;
@@ -41,12 +42,11 @@ public class CustomDialog extends Dialog implements DialogInterface.OnClickListe
 
             switch (v.getId()){
                 case R.id.btn_sp:
-                    db.execSQL("INSERT INTO RecordFotunes values('" +
+                    db.execSQL("INSERT INTO RecordFortunes values('" +
                             editSave.getText().toString() + "', '" + "1" + "', '"+"2"+"', "+"3"+
                             ");");
 
-                    Toast toast = Toast.makeText(getContext(), "저장에 성공했습니다!"+editSave.getText().toString(), Toast.LENGTH_SHORT);
-                    toast.show();
+                    ((MainActivity)MainActivity.mContext).changeActivity();
 
                     dismiss();
                 case R.id.btn_sn:

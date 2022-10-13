@@ -38,9 +38,9 @@ public class LuckRecordActivity extends AppCompatActivity {
 
         list.setVisibility(View.INVISIBLE); // 기본 목록 텍스트뷰 안 보이게 설정
 
-        Cursor cCnt = db.rawQuery("SELECT count(*) FROM RecordFotunes;", null);
+        Cursor cCnt = db.rawQuery("SELECT count(*) FROM RecordFortunes;", null);
         cCnt.moveToNext();
-        Cursor cTitle = db.rawQuery("SELECT * FROM RecordFotunes;", null);
+        Cursor cTitle = db.rawQuery("SELECT * FROM RecordFortunes;", null);
         String unseTitle; //db에서 운세 title 받아올 용도
         int recodeCount = cCnt.getInt(0);
 
