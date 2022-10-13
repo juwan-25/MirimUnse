@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "197488108316",
+    "project_id": "mirimunse",
+    "storage_bucket": "mirimunse.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:197488108316:android:7016a714b137ff3efc10d9",
+        "android_client_info": {
+          "package_name": "kr.hs.s2104.mirimunse"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "197488108316-o3l8uiv4becnv1odhpli01l5vg7i35hq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "kr.hs.s2104.mirimunse",
+            "certificate_hash": "1540fb5c5bffc8955ba3ec98513791623230d0b5"
+          }
+        },
+        {
+          "client_id": "197488108316-tovqkfcn3phacvokeitp1upt1kaoei7t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQfIWPh_WosPf_Rmvz6FkdCx-y09UCCn4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "197488108316-tovqkfcn3phacvokeitp1upt1kaoei7t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
