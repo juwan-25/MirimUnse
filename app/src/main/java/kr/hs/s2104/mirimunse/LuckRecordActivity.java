@@ -7,6 +7,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -61,13 +62,11 @@ public class LuckRecordActivity extends AppCompatActivity {
 
             //TextView 생성
             TextView view1 = new TextView(this);
+            view1.setId(i); // 새로 생성된 textview id값
             view1.setText(unseTitle);
             view1.setTextSize(FONT_SIZE);
             view1.setCompoundDrawablesWithIntrinsicBounds( R.drawable.dot, 0, R.drawable.threedot, 0);  // 양쪽 버튼 이미지
             view1.setTextColor(Color.rgb(251,218,218)); //글자색상 rgb로 코드 변환
-
-            //부모 뷰에 추가
-            container.addView(view1);
 
         }
 
