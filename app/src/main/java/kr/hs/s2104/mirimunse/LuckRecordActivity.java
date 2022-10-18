@@ -43,6 +43,7 @@ public class LuckRecordActivity extends AppCompatActivity {
         db = dbHelper.getWritableDatabase();
         list = findViewById(R.id.original_list);
         unseRecord = findViewById(R.id.textv);
+        Record = findViewById(R.id.parent);
 
         list.setVisibility(View.INVISIBLE); // 기본 목록 텍스트뷰 안 보이게 설정
 
@@ -74,8 +75,6 @@ public class LuckRecordActivity extends AppCompatActivity {
 
             //부모 뷰에 추가
             container.addView(view1);
-
-            Record = findViewById(R.id.parent);
 
         }
 
