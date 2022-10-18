@@ -30,10 +30,6 @@ public class LuckRecordActivity extends AppCompatActivity {
     SQLiteDatabase db;
     LinearLayout Record;
 
-    //동적배열 추가 ArrayList
-    List<String> members = new ArrayList<String>();
-    String cppyArray[] = new String[members.size()];
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,7 +52,7 @@ public class LuckRecordActivity extends AppCompatActivity {
         //부모 뷰
         container = (LinearLayout) findViewById(R.id.parent);
 
-        for(int i = 0; i<cppyArray.length; i++){
+        for(int i = 0; i<recodeCount; i++){
             cTitle.moveToNext();
             unseTitle = cTitle.getString(0);
             if(i==0) unseRecord.setText(unseTitle);
@@ -69,9 +65,6 @@ public class LuckRecordActivity extends AppCompatActivity {
             view1.setTextSize(FONT_SIZE);
             view1.setCompoundDrawablesWithIntrinsicBounds( R.drawable.dot, 0, R.drawable.threedot, 0);  // 양쪽 버튼 이미지
             view1.setTextColor(Color.rgb(251,218,218)); //글자색상 rgb로 코드 변환
-
-            //배열에 참조값을 추가하는 코드
-            cppyArray[i] = members.get(i);
 
             //부모 뷰에 추가
             container.addView(view1);
