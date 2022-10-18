@@ -41,7 +41,7 @@ public class LuckRecordDetailActivity extends AppCompatActivity {
         db = dbHelper.getWritableDatabase();
         Cursor c = db.rawQuery("SELECT * FROM RecordFortunes;", null);
         //아이디값만큼 for문 돌리기
-        for(int i = 0; i<5; i++)
+        //for(int i = 0; i<0; i++)
             c.moveToNext();
         imgCard.setImageResource(imgId[0]); //DB에서 이미지 불러오는 문제 해결한 뒤 수정
         textTitle.setText(c.getString(1));
