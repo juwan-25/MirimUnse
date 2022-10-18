@@ -22,6 +22,11 @@ public class LuckRecordDetailActivity extends AppCompatActivity {
     ImageView imgCard;
     TextView textTitle, textCont;
 
+    int[] imgId = {
+            R.drawable.img_riches_good, R.drawable.img_riches_good, R.drawable.img_friendship_good, R.drawable.img_friendship_bad, R.drawable.img_study_good,
+            R.drawable.img_study_bad, R.drawable.img_health_good, R.drawable.img_health_bad, R.drawable.img_employ_good, R.drawable.img_employ_bad
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,8 +41,9 @@ public class LuckRecordDetailActivity extends AppCompatActivity {
         db = dbHelper.getWritableDatabase();
         Cursor c = db.rawQuery("SELECT * FROM RecordFortunes;", null);
         //아이디값만큼 for문 돌리기
-        c.moveToNext();
-        imgCard.setImageResource(0); //DB에서 이미지 불러오는 문제 해결한 뒤 수정
+        for(int i = 0; i<5; i++)
+            c.moveToNext();
+        imgCard.setImageResource(imgId[0]); //DB에서 이미지 불러오는 문제 해결한 뒤 수정
         textTitle.setText(c.getString(1));
         textCont.setText(c.getString(2));
 
