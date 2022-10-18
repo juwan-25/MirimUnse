@@ -34,6 +34,11 @@ public class LuckCheckDetailActivity extends AppCompatActivity {
 
     CustomDialog dialog;
 
+    int[] imgId = {
+            R.drawable.img_riches_good, R.drawable.img_riches_good, R.drawable.img_friendship_good, R.drawable.img_friendship_bad, R.drawable.img_study_good,
+            R.drawable.img_study_bad, R.drawable.img_health_good, R.drawable.img_health_bad, R.drawable.img_employ_good, R.drawable.img_employ_bad
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,7 +89,7 @@ public class LuckCheckDetailActivity extends AppCompatActivity {
 
         fortuneTit = c.getString(1);
         fortuneCont = c.getString(2);
-        fortuneImg = c.getInt(3);
+        fortuneImg = imgId[i-1];
 
         textCheckTit.setText(fortuneTit);
         textCheckCont.setText(fortuneCont);
