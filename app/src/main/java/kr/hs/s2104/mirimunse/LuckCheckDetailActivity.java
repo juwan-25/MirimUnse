@@ -88,7 +88,8 @@ public class LuckCheckDetailActivity extends AppCompatActivity {
         for(int j=0; j<i; j++) c.moveToNext();
 
         fortuneTit = c.getString(1);
-        fortuneCont = c.getString(2);
+        fortuneCont = c.getString(2).replace("\\n", "\n");
+        Log.d("확인하기", fortuneCont);
         fortuneImg = imgId[i-1];
 
         textCheckTit.setText(fortuneTit);
