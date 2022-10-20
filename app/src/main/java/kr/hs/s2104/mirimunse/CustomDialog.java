@@ -24,6 +24,8 @@ public class CustomDialog extends Dialog implements DialogInterface.OnClickListe
     DatabaseHelper dbHelper;
     SQLiteDatabase db;
 
+    static String title, cont, img;
+
     public CustomDialog(@NonNull Context context) {
         super(context);
 
@@ -48,7 +50,7 @@ public class CustomDialog extends Dialog implements DialogInterface.OnClickListe
             switch (v.getId()){
                 case R.id.btn_sp:
                     db.execSQL("INSERT INTO RecordFortunes values('" +
-                            LocalDate.now().toString()+" "+editSave.getText().toString() + "', '" + "1" + "', '"+"2"+"', "+"3"+
+                            LocalDate.now().toString()+" "+editSave.getText().toString() + "', '" + title + "', '"+cont+"', "+img+
                             ");");
 
                     ((MainActivity)MainActivity.mContext).changeActivity();

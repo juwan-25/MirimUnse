@@ -95,6 +95,12 @@ public class LuckCheckDetailActivity extends AppCompatActivity {
         fortuneCont = c.getString(2).replace("\\n", "\n");
         fortuneImg = imgId[i-1];
 
+        //DB에 저장할 수 있도록 값 넘기기
+        CustomDialog.title = fortuneTit;
+        CustomDialog.cont = fortuneCont;
+        CustomDialog.img = Integer.toString(fortuneImg);
+
+        //텍스트뷰의 텍스트 지정
         textCheckTit.setText(fortuneTit);
         textCheckCont.setText(fortuneCont);
         cardDetail.setImageResource(fortuneImg);
