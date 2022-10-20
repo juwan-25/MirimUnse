@@ -55,19 +55,19 @@
             android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
-            android:src="@drawable/card_back"/>
+            android:background="@drawable/custom_ripple_cardback"/>
         <ImageView
             android:id="@+id/card2"
             android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
-            android:src="@drawable/card_back"/>
+            android:background="@drawable/custom_ripple_cardback"/>
         <ImageView
             android:id="@+id/card3"
             android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
-            android:src="@drawable/card_back"/>
+            android:background="@drawable/custom_ripple_cardback"/>
     </LinearLayout>
     </LinearLayout>
     <!--바텀바-->

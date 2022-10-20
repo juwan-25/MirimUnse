@@ -6,6 +6,10 @@
         <entry key="..\:/MirimUnse/app/src/main/res/drawable/btn_dlg2.xml" value="0.147" />
         <entry key="..\:/MirimUnse/app/src/main/res/drawable/custom_ripple_btnsn.xml" value="0.147" />
         <entry key="..\:/MirimUnse/app/src/main/res/drawable/custom_ripple_btnsp.xml" value="0.147" />
+        <entry key="..\:/MirimUnse/app/src/main/res/drawable/custom_ripple_cardback.xml" value="0.1" />
+        <entry key="..\:/MirimUnse/app/src/main/res/drawable/custom_ripple_magiccard.xml" value="0.147" />
+        <entry key="..\:/MirimUnse/app/src/main/res/drawable/custom_ripple_maincard.xml" value="0.1" />
+        <entry key="..\:/MirimUnse/app/src/main/res/layout/activity_luck_check.xml" value="0.12082066869300911" />
         <entry key="..\:/MirimUnse/app/src/main/res/layout/activity_luck_check2.xml" value="0.17806484295845998" />
         <entry key="..\:/MirimUnse/app/src/main/res/layout/activity_luck_check_detail.xml" value="0.1" />
         <entry key="..\:/MirimUnse/app/src/main/res/layout/activity_luck_record.xml" value="0.17806484295845998" />
