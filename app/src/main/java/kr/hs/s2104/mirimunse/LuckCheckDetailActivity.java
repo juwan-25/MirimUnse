@@ -32,6 +32,7 @@ public class LuckCheckDetailActivity extends AppCompatActivity {
 
     DatabaseHelper dbHelper;
     SQLiteDatabase db;
+
     String fortuneTit, fortuneCont;
     int fortuneImg;
 
@@ -50,33 +51,6 @@ public class LuckCheckDetailActivity extends AppCompatActivity {
 
         LayoutInflater inflater = (LayoutInflater)getApplicationContext().getSystemService(LAYOUT_INFLATER_SERVICE);
         final View layout = inflater.inflate(R.layout.dialog01, findViewById(R.id.edit_save));
-
-        //하단 바
-
-        recordMain = findViewById(R.id.text_record);    // 보관함 버튼 연결
-        recordMain.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), LuckRecordActivity.class);
-                startActivity(intent);
-            }
-        });
-        checkMain = findViewById(R.id.btn_check);   // 홈 버튼 연결
-        checkMain.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), LuckCheckActivity.class);
-                startActivity(intent);
-            }
-        });
-        toolMain = findViewById(R.id.text_tool);    // 설정 버튼 연결
-        toolMain.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
-                startActivity(intent);
-            }
-        });
 
         cardDetail = findViewById(R.id.card_detail);
         textCheckTit = findViewById(R.id.text_check_tit);
@@ -113,7 +87,31 @@ public class LuckCheckDetailActivity extends AppCompatActivity {
                 dialog.show();
             }
         });
+
+        //하단 바
+        recordMain = findViewById(R.id.text_record);    // 보관함 버튼 연결
+        recordMain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), LuckRecordActivity.class);
+                startActivity(intent);
+            }
+        });
+        checkMain = findViewById(R.id.btn_check);   // 홈 버튼 연결
+        checkMain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), LuckCheckActivity.class);
+                startActivity(intent);
+            }
+        });
+        toolMain = findViewById(R.id.text_tool);    // 설정 버튼 연결
+        toolMain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
+                startActivity(intent);
+            }
+        });
     }
-
-
 }

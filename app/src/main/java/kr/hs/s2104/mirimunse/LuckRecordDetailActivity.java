@@ -37,9 +37,10 @@ public class LuckRecordDetailActivity extends AppCompatActivity {
         Cursor c = db.rawQuery("SELECT * FROM RecordFortunes;", null);
 
         //아이디값만큼 for문 돌리기
-        for(int i = 0; i<6; i++)
+        int id = 6; //임시값
+        for(int i = 0; i<id; i++)
             c.moveToNext();
-        imgCard.setImageResource(Integer.parseInt(c.getString(3))); //DB에서 이미지 불러오는 문제 해결한 뒤 수정
+        imgCard.setImageResource(Integer.parseInt(c.getString(3)));
         textTitle.setText(c.getString(1));
         textCont.setText(c.getString(2));
 
