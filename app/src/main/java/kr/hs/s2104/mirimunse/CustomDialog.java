@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Build;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -12,6 +13,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+
+import java.time.LocalDate;
 
 public class CustomDialog extends Dialog implements DialogInterface.OnClickListener {
     Button btn_save, btn_cancel;
@@ -35,6 +39,7 @@ public class CustomDialog extends Dialog implements DialogInterface.OnClickListe
     }
 
     View.OnClickListener btnListener = new View.OnClickListener() {
+        @RequiresApi(api = Build.VERSION_CODES.O)
         @Override
         public void onClick(View v) {
             dbHelper = new DatabaseHelper(getContext());
@@ -43,7 +48,7 @@ public class CustomDialog extends Dialog implements DialogInterface.OnClickListe
             switch (v.getId()){
                 case R.id.btn_sp:
                     db.execSQL("INSERT INTO RecordFortunes values('" +
-                            editSave.getText().toString() + "', '" + "1" + "', '"+"2"+"', "+"3"+
+                            LocalDate.now().toString()+" "+editSave.getText().toString() + "', '" + "1" + "', '"+"2"+"', "+"3"+
                             ");");
 
                     ((MainActivity)MainActivity.mContext).changeActivity();

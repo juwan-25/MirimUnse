@@ -1,5 +1,6 @@
 package kr.hs.s2104.mirimunse;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
@@ -7,6 +8,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.icu.text.LocaleDisplayNames;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -18,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.time.LocalDate;
 import java.util.Random;
 
 public class LuckCheckDetailActivity extends AppCompatActivity {
@@ -39,6 +42,7 @@ public class LuckCheckDetailActivity extends AppCompatActivity {
             R.drawable.img_study_bad, R.drawable.img_health_good, R.drawable.img_health_bad, R.drawable.img_employ_good, R.drawable.img_employ_bad
     };
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -89,7 +93,6 @@ public class LuckCheckDetailActivity extends AppCompatActivity {
 
         fortuneTit = c.getString(1);
         fortuneCont = c.getString(2).replace("\\n", "\n");
-        Log.d("확인하기", fortuneCont);
         fortuneImg = imgId[i-1];
 
         textCheckTit.setText(fortuneTit);
