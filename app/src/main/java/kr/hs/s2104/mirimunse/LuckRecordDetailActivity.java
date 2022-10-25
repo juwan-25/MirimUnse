@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -22,11 +23,14 @@ public class LuckRecordDetailActivity extends AppCompatActivity {
     ImageView imgCard;
     TextView textTitle, textCont;
 
+    EditText editTitle;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_luck_record_detail);
 
+        editTitle = findViewById(R.id.edit_title);
         imgCard = findViewById(R.id.card_detail);
         textTitle = findViewById(R.id.text_record_tit);
         textCont = findViewById(R.id.text_record_cont);
@@ -40,6 +44,7 @@ public class LuckRecordDetailActivity extends AppCompatActivity {
         int id = 6; //임시값
         for(int i = 0; i<id; i++)
             c.moveToNext();
+        editTitle.setText(c.getString(0).substring(11));
         imgCard.setImageResource(Integer.parseInt(c.getString(3)));
         textTitle.setText(c.getString(1));
         textCont.setText(c.getString(2));

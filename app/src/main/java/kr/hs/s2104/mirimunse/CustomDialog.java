@@ -49,11 +49,17 @@ public class CustomDialog extends Dialog implements DialogInterface.OnClickListe
 
             switch (v.getId()){
                 case R.id.btn_sp:
-                    db.execSQL("INSERT INTO RecordFortunes values('" +
-                            LocalDate.now().toString()+" "+editSave.getText().toString() + "', '" + title + "', '"+cont+"', "+img+
-                            ");");
+                    if(editSave.length() == 0){
+                        // TODO: 커스텀 토스트 xml 적용시키기
+                        Toast.makeText(getContext(), "제목을 입력해주세요.", Toast.LENGTH_SHORT).show();
+                    }
+                    else{
+                        db.execSQL("INSERT INTO RecordFortunes values('" +
+                                LocalDate.now().toString()+" "+editSave.getText().toString() + "', '" + title + "', '"+cont+"', "+img+
+                                ");");
 
-                    ((MainActivity)MainActivity.mContext).changeActivity();
+                        ((MainActivity)MainActivity.mContext).changeActivity();
+                    }
 
                     dismiss();
                 case R.id.btn_sn:

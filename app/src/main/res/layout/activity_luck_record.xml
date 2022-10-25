@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:padding="15dp"
         android:orientation="vertical">
-        // 왼쪽 라인 이미지
+<!--        왼쪽 라인 이미지-->
         <ImageView
             android:layout_width="wrap_content"
             android:paddingTop="13dp"
@@ -46,7 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="34px">
 
-            // LinearLayout id parent (추가되는 목록)
+<!--            LinearLayout id parent (추가되는 목록)-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
@@ -77,13 +77,13 @@
                 </LinearLayout>
             </LinearLayout>
 
-            // 기본 목록 1개
+<!--            기본 목록 1개-->
 
         </FrameLayout>
         </ScrollView>
     </FrameLayout>
 
-    //바텀바
+<!--    바텀바-->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -109,7 +109,9 @@
                     android:gravity="center_horizontal"
                     android:paddingTop="62dp"
                     android:text="보관함"
-                    android:textColor="#E7998D"/>
+                    android:textColor="#E7998D"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    />
                 <ImageView
                     android:id="@+id/btn_check"
                     android:layout_marginTop="10dp"
