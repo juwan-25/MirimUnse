@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -17,6 +18,7 @@ public class SettingsActivity extends AppCompatActivity {
     String[] detail1 = {"개발툴", "Android Studio Java"};
     String[] detail2 = {"개발 참여자", "2102 김윤서", "2104 백지민", "2211이주완"};
     String[] detail3 = {"개발기간", "2022.07.25~"};
+    Button btnToLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,16 @@ public class SettingsActivity extends AppCompatActivity {
         Spinner spinner3 = findViewById(R.id.spinner3);
         ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, detail3);
         spinner3.setAdapter(adapter3);
+
+        //로그인 버튼 연결
+        btnToLogin = findViewById(R.id.btn_to_login);
+        btnToLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(intent);
+            }
+        });
 
         // 하단 바
         recordMain = findViewById(R.id.text_record);    // 보관함 버튼 연결

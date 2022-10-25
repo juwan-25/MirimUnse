@@ -99,7 +99,7 @@
             android:orientation="horizontal">
             // 로그인 버튼
             <Button
-                android:id="@+id/btn_login"
+                android:id="@+id/btn_to_login"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="로그인"/>
