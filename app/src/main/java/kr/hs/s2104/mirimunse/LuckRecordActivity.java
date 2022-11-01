@@ -1,6 +1,8 @@
 package kr.hs.s2104.mirimunse;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.database.Cursor;
@@ -24,25 +26,26 @@ public class LuckRecordActivity extends AppCompatActivity {
     private static final float FONT_SIZE = 15;
     private LinearLayout container; // 부모 뷰
 
+    private RecyclerView mRecyclerView;
+    private MyRecyclerAdapter mRecyclerAdapter;
+    private ArrayList<FriendItem> mfriendItems;
+
     TextView toolMain, unseRecord;
     ImageView checkMain;
     LinearLayout list;
     DatabaseHelper dbHelper;
     SQLiteDatabase db;
-    LinearLayout Record;
+    RecyclerView record;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_luck_record);
-
         dbHelper = new DatabaseHelper(this);
         db = dbHelper.getWritableDatabase();
-        list = findViewById(R.id.original_list);
-        unseRecord = findViewById(R.id.textv);
-        Record = findViewById(R.id.parent);
-
-        list.setVisibility(View.INVISIBLE); // 기본 목록 텍스트뷰 안 보이게 설정
+//        list = findViewById(R.id.original_list);
+//        unseRecord = findViewById(R.id.name);
+//        list.setVisibility(View.INVISIBLE); // 기본 목록 텍스트뷰 안 보이게 설정
 
         Cursor cCnt = db.rawQuery("SELECT count(*) FROM RecordFortunes;", null);
         cCnt.moveToNext();
@@ -50,27 +53,47 @@ public class LuckRecordActivity extends AppCompatActivity {
         String unseTitle; //db에서 운세 title 받아올 용도
         int recodeCount = cCnt.getInt(0);
 
-        //부모 뷰
-        container = (LinearLayout) findViewById(R.id.parent);
+        mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
 
-        for(int i = 0; i<recodeCount; i++){
-            cTitle.moveToNext();
-            unseTitle = cTitle.getString(0);
-            if(i==0) unseRecord.setText(unseTitle);
-            //TextView 새롭게 만드는 코드
-            //새롭게 만든 TextView.setText(unseTitle);
+        /* initiate adapter */
+        mRecyclerAdapter = new MyRecyclerAdapter();
 
-            //TextView 생성
-            TextView view1 = new TextView(this);
-            view1.setId(i); // 새로 생성된 textview id값
-            view1.setText(unseTitle);
-            view1.setTextSize(FONT_SIZE);
-            view1.setCompoundDrawablesWithIntrinsicBounds( R.drawable.dot, 0, R.drawable.threedot, 0);  // 양쪽 버튼 이미지
-            view1.setTextColor(Color.rgb(251,218,218)); //글자색상 rgb로 코드 변환
+        /* initiate recyclerview */
+        mRecyclerView.setAdapter(mRecyclerAdapter);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL,false));
 
+        mfriendItems = new ArrayList<>();
+        // 예시 데이터 넣기
+        for(int i=0;i<5;i++){
+            mfriendItems.add(new FriendItem(R.drawable.dot, i+"번째 사람",R.drawable.threedot));
         }
 
-        Record.setOnClickListener(new View.OnClickListener() {
+        mRecyclerAdapter.setFriendList(mfriendItems);
+
+        //부모 뷰
+//        container = (LinearLayout) findViewById(R.id.parent);
+
+//        for(int i = 0; i<recodeCount; i++){
+//            cTitle.moveToNext();
+//            unseTitle = cTitle.getString(0);
+//            if(i==0) unseRecord.setText(unseTitle);
+//            //TextView 새롭게 만드는 코드
+//            //새롭게 만든 TextView.setText(unseTitle);
+//
+//            //TextView 생성
+//            TextView view1 = new TextView(this);
+//            view1.setId(i); // 새로 생성된 textview id값
+//            view1.setText(unseTitle);
+//            view1.setTextSize(FONT_SIZE);
+//            view1.setCompoundDrawablesWithIntrinsicBounds( R.drawable.dot, 0, R.drawable.threedot, 0);  // 양쪽 버튼 이미지
+//            view1.setTextColor(Color.rgb(251,218,218)); //글자색상 rgb로 코드 변환
+//
+//        }
+
+        // recyclerview
+        record = findViewById(R.id.recyclerView);
+        record.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), LuckRecordDetailActivity.class);
@@ -97,4 +120,6 @@ public class LuckRecordActivity extends AppCompatActivity {
         });
 
     }
+
+
 }
