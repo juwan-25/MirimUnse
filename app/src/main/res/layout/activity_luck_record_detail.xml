@@ -11,77 +11,119 @@
     <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
+
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:src="@drawable/toolbar"/>
+            android:src="@drawable/toolbar" />
+
         <ImageView
             android:id="@+id/logo"
             android:layout_width="85dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:src="@drawable/logo"/>
+            android:src="@drawable/logo" />
     </FrameLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:orientation="vertical"
+        android:layout_weight="3"
         android:gravity="center"
-        android:layout_weight="3">
-    <FrameLayout
-        android:layout_marginBottom="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <ImageView
-            android:layout_width="230dp"
-            android:layout_height="330dp"
-            android:layout_gravity="center"
-            android:src="@drawable/card_check_detail"/>
-        <ImageView
-            android:id="@+id/card_detail"
-            android:layout_gravity="center"
-            android:layout_width="150dp"
-            android:layout_height="250dp"
-            android:layout_marginLeft="34dp"
-            android:layout_marginBottom="2dp"
-            android:src="@drawable/img_riches_good"/>
-    </FrameLayout>
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/text_record_tit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/notoserif"
-        android:textSize="17dp"
-        android:textColor="#fff"
-        android:textStyle="bold"
-        android:text="매점 아줌마한테 간식 얻어먹을 것만 같은 날"
-        android:gravity="center"/>
-    <TextView
-        android:id="@+id/text_record_cont"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="15dp"
-        android:gravity="center"
-        android:text="매점을 들려 맛있는 간식을 사먹는다면..\n행복해지고 말 거야\n매점 아주머니께서 맛있는 걸 덤으로 주실지도!!\n간식처럼 달콤한 하루를 보내자~"
-        android:textSize="14dp"
-        android:fontFamily="@font/notoserif"
-        android:textColor="#fff"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="제목"
+                android:fontFamily="@font/notoserif"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                />
+
+            <EditText
+                android:id="@+id/edit_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notoserif"
+                android:textColor="#ffffff"
+                android:textSize="13dp"
+                android:text="사용자 지정 제목"
+                android:gravity="center"
+                android:paddingBottom="2dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:backgroundTint="@color/white"
+                />
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp">
+
+            <ImageView
+                android:layout_width="230dp"
+                android:layout_height="330dp"
+                android:layout_gravity="center"
+                android:src="@drawable/card_check_detail" />
+
+            <ImageView
+                android:id="@+id/card_detail"
+                android:layout_width="150dp"
+                android:layout_height="250dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="34dp"
+                android:layout_marginBottom="2dp"
+                android:src="@drawable/img_riches_good" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/text_record_tit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/notoserif"
+            android:gravity="center"
+            android:text="매점 아줌마한테 간식 얻어먹을 것만 같은 날"
+            android:textColor="#fff"
+            android:textSize="17dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/text_record_cont"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/notoserif"
+            android:gravity="center"
+            android:padding="15dp"
+            android:text="매점을 들려 맛있는 간식을 사먹는다면..\n행복해지고 말 거야\n매점 아주머니께서 맛있는 걸 덤으로 주실지도!!\n간식처럼 달콤한 하루를 보내자~"
+            android:textColor="#fff"
+            android:textSize="14dp" />
     </LinearLayout>
     <!--바텀바-->
     <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_weight="0.5">
+
         <ImageView
-            android:paddingTop="45dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/bottombar"/>
+            android:paddingTop="45dp"
+            android:src="@drawable/bottombar" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <TextView
                 android:id="@+id/text_record"
                 android:layout_width="0dp"
@@ -90,14 +132,16 @@
                 android:gravity="center_horizontal"
                 android:paddingTop="62dp"
                 android:text="보관함"
-                android:textColor="#E7998D"/>
+                android:textColor="#E7998D" />
+
             <ImageView
                 android:id="@+id/btn_check"
-                android:layout_marginTop="10dp"
                 android:layout_width="0dp"
                 android:layout_height="85dp"
+                android:layout_marginTop="10dp"
                 android:layout_weight="1"
-                android:src="@drawable/mainunbtn_img"/>
+                android:src="@drawable/mainunbtn_img" />
+
             <TextView
                 android:id="@+id/text_tool"
                 android:layout_width="0dp"
@@ -106,7 +150,7 @@
                 android:gravity="center_horizontal"
                 android:paddingTop="62dp"
                 android:text="설정"
-                android:textColor="#80ffffff"/>
+                android:textColor="#80ffffff" />
         </LinearLayout>
     </FrameLayout>
 

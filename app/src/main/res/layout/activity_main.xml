@@ -20,17 +20,19 @@
         android:layout_height="wrap_content"
         android:gravity="center">
 
+        <!--카드 사진-->
         <ImageView
             android:layout_width="300dp"
             android:layout_height="500dp"
             android:layout_gravity="center"
             android:src="@drawable/maincard1" />
 
+        <!--그림자-->
         <ImageView
             android:id="@+id/img_to_check"
             android:layout_width="300dp"
             android:layout_height="500dp"
-            android:src="@drawable/maincard2"
+            android:background="@drawable/custom_ripple_maincard"
             android:layout_gravity="center"/>
 
         <TextView

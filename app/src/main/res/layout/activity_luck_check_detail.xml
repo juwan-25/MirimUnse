@@ -63,7 +63,7 @@
             android:textSize="17dp"
             android:textColor="#fff"
             android:textStyle="bold"
-            android:text="매점 아줌마한테 간식 얻어먹을 것만 같은 날"
+            android:text="운세 타이틀"
             android:gravity="center"/>
         <TextView
             android:id="@+id/text_check_cont"
@@ -71,7 +71,7 @@
             android:layout_height="wrap_content"
             android:padding="15dp"
             android:gravity="center"
-            android:text="매점을 들려 맛있는 간식을 사먹는다면..\n행복해지고 말 거야\n매점 아주머니께서 맛있는 걸 덤으로 주실지도!!\n간식처럼 달콤한 하루를 보내자~"
+            android:text="운세 내용"
             android:textSize="14dp"
             android:fontFamily="@font/notoserif"
             android:textColor="#fff"
@@ -81,7 +81,7 @@
             android:layout_margin="40dp"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:src="@drawable/btn_save"
+            android:background="@drawable/custom_ripple_btnsave"
             android:layout_gravity="center"/>
     </LinearLayout>
     </ScrollView>
