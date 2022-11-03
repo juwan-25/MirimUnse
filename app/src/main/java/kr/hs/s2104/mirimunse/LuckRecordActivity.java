@@ -65,7 +65,7 @@ public class LuckRecordActivity extends AppCompatActivity {
 
         mfriendItems = new ArrayList<>();
         // 예시 데이터 넣기
-        for(int i=0;i<5;i++){
+        for(int i=0;i<recodeCount;i++){
             mfriendItems.add(new FriendItem(R.drawable.dot, i+"번째 사람",R.drawable.threedot));
         }
 
@@ -92,14 +92,14 @@ public class LuckRecordActivity extends AppCompatActivity {
 //        }
 
         // recyclerview
-        record = findViewById(R.id.recyclerView);
-        record.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), LuckRecordDetailActivity.class);
-                startActivity(intent);
-            }
-        });
+//        record = findViewById(R.id.recyclerView);
+//        record.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(getApplicationContext(), LuckRecordDetailActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
         // 하단 바
         toolMain = findViewById(R.id.text_tool);
