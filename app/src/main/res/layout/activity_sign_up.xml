@@ -158,6 +158,7 @@
                         android:fontFamily="@font/notoserif"
                         android:background="@android:color/transparent"
                         android:textColor="#FBDADA"
+                        android:inputType="textPassword"
                         android:textSize="13dp"/>
                 </FrameLayout>
             </LinearLayout>
@@ -191,6 +192,7 @@
                         android:fontFamily="@font/notoserif"
                         android:background="@android:color/transparent"
                         android:textColor="#FBDADA"
+                        android:inputType="textPassword"
                         android:textSize="13dp"/>
                 </FrameLayout>
             </LinearLayout>

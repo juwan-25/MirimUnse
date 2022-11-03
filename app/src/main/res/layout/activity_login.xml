@@ -71,13 +71,15 @@
                     android:layout_gravity="center_horizontal"
                     android:text="ID"/>
                 <EditText
+                    android:layout_marginLeft="10dp"
                     android:id="@+id/edit_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:background="@android:color/transparent"
                     android:fontFamily="@font/notoserif"
-                    android:textColor="#FBDADA"/>
+                    android:textColor="#FBDADA"
+                    android:textSize="13dp"/>
             </LinearLayout>
             <ImageView
                 android:layout_marginTop="36dp"
@@ -103,13 +105,16 @@
                     android:layout_gravity="center_horizontal"
                     android:text="PW"/>
                 <EditText
+                    android:layout_marginLeft="10dp"
                     android:id="@+id/edit_pass"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:fontFamily="@font/notoserif"
                     android:background="@android:color/transparent"
-                    android:textColor="#FBDADA"/>
+                    android:textColor="#FBDADA"
+                    android:inputType="textPassword"
+                    android:textSize="13dp"/>
             </LinearLayout>
             <ImageView
                 android:layout_marginTop="36dp"

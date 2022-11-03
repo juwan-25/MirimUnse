@@ -9,7 +9,6 @@
     android:gravity="center_horizontal"
     tools:context=".LuckCheckDetailActivity">
     <!--툴바-->
-    // 커밋
     <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
@@ -25,107 +24,127 @@
             android:src="@drawable/logo"/>
     </FrameLayout>
 
-    // 환영 메시지
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:paddingTop="20dp"
-        android:text="님 환영합니다!"
-        android:textColor="@color/white"
-        android:textSize="23dp"/>
-
     <LinearLayout
         android:layout_width="337dp"
         android:layout_height="0dp"
         android:layout_marginTop="30dp"
         android:layout_weight="2"
-        android:background="@drawable/settings_detail"
         android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/text_detail1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:gravity="center"
-            android:paddingTop="35dp"
-            android:text="정보"
-            android:textColor="#FFFFFF"
-            android:textSize="22sp" />
-
+        <FrameLayout
+            android:layout_marginTop="40dp"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/proimg_l"/>
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_width="95dp"
+                android:layout_height="95dp"
+                android:background="@drawable/proimg_s"/>
+        </FrameLayout>
         <LinearLayout
-            android:id="@+id/settings_text_detail1"
-            android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal"
-            android:paddingHorizontal="30dp">
-
-            <Spinner
-                android:id="@+id/spinner1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:minHeight="48dp"
-                tools:ignore="SpeakableTextPresentCheck" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal"
-            android:paddingHorizontal="30dp">
-
-            <Spinner
-                android:id="@+id/spinner2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:minHeight="48dp"
-                tools:ignore="SpeakableTextPresentCheck" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal"
-            android:paddingHorizontal="30dp">
-
-            <Spinner
-                android:id="@+id/spinner3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:minHeight="48dp"
-                tools:ignore="SpeakableTextPresentCheck" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="152dp"
-            android:layout_weight="1"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal">
-
-            <Switch
+            android:layout_gravity="center"
+            android:orientation="vertical">
+            <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_marginTop="200dp"
+                android:layout_height="wrap_content"
                 android:fontFamily="@font/notoserif"
-                android:minHeight="48dp"
-                android:text="알림켜기"
-                android:textColor="@color/white"
+                android:textColor="#FBDADA"
                 android:textSize="13dp"
-                android:thumb="@drawable/switch_thumb"
-                android:track="@drawable/switch_selector" />
+                android:text="아이디"/>
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/setting_edit"/>
+                <TextView
+                    android:id="@+id/text_set_id"
+                    android:text="ID"
+                    android:gravity="center"
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/notoserif"
+                    android:background="@android:color/transparent"
+                    android:textColor="#FBDADA"
+                    android:textSize="13dp"/>
+            </FrameLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notoserif"
+                android:textColor="#FBDADA"
+                android:textSize="13dp"
+                android:text="이름"/>
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/setting_edit"/>
+                <TextView
+                    android:id="@+id/text_set_name"
+                    android:text="name"
+                    android:gravity="center"
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/notoserif"
+                    android:background="@android:color/transparent"
+                    android:textColor="#FBDADA"
+                    android:textSize="13dp"/>
+            </FrameLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="60dp"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/btn_to_loginout"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:background="@drawable/btn_login_active"
+                android:fontFamily="@font/notoserif"
+                android:textColor="#FBDADA"
+                android:textSize="13dp"
+                android:text="로그아웃"/>
+            <Button
+                android:layout_marginLeft="5dp"
+                android:id="@+id/btn_info"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:background="@drawable/btn_login_active"
+                android:fontFamily="@font/notoserif"
+                android:textColor="#FBDADA"
+                android:textSize="13dp"
+                android:text="정보"/>
         </LinearLayout>
     </LinearLayout>
+
 
     <!--바텀바-->
     <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_weight="0.39">
+        android:layout_weight="0.35">
         <ImageView
             android:paddingTop="45dp"
             android:layout_width="match_parent"
