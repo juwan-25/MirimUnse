@@ -208,6 +208,6 @@
             android:textSize="12dp"
             android:layout_width="90dp"
             android:layout_height="34dp"
-            android:background="@drawable/btn_login"/>
+            android:background="@drawable/custom_ripple_login"/>
     </FrameLayout>
 </LinearLayout>

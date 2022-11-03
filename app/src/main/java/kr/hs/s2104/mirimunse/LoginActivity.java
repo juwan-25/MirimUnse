@@ -1,5 +1,7 @@
 package kr.hs.s2104.mirimunse;
 
+import android.animation.ArgbEvaluator;
+import android.animation.ValueAnimator;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -67,6 +69,19 @@ public class LoginActivity extends AppCompatActivity {
         btnSignTo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Integer colorFrom = getResources().getColor(R.color.btn_color);
+                Integer colorTo = getResources().getColor(R.color.white);
+                ValueAnimator colorAnimation = ValueAnimator.ofObject(new ArgbEvaluator(), colorFrom, colorTo);
+                colorAnimation.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+
+                    @Override
+                    public void onAnimationUpdate(ValueAnimator animator) {
+                        btnSignTo.setTextColor((Integer)animator.getAnimatedValue());
+                    }
+
+                });
+                colorAnimation.start();
+
                 Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
                 startActivity(intent);
                 finish();

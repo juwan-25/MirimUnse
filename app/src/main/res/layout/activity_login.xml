@@ -140,7 +140,6 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="510dp"
             android:text="회원가입"
-            android:background="@drawable/custom_ripple_text"
             android:fontFamily="@font/notoserif"
             android:textColor="#5B3084"/>
 
