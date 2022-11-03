@@ -12,6 +12,9 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
+
 public class SettingsActivity extends AppCompatActivity {
     ImageView checkMain;
     TextView recordMain, toolMain;
@@ -46,6 +49,10 @@ public class SettingsActivity extends AppCompatActivity {
         recordMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                YoYo.with(Techniques.Tada)
+                        .duration(700)
+                        .repeat(1)
+                        .playOn(findViewById(R.id.text_record));
                 Intent intent = new Intent(getApplicationContext(), LuckRecordActivity.class);
                 startActivity(intent);
             }
@@ -62,6 +69,10 @@ public class SettingsActivity extends AppCompatActivity {
         toolMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                YoYo.with(Techniques.Tada)
+                        .duration(700)
+                        .repeat(1)
+                        .playOn(findViewById(R.id.text_tool));
                 Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
                 startActivity(intent);
             }

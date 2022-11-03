@@ -11,6 +11,9 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
+
 public class SettingsActivity2 extends AppCompatActivity {
     ImageView checkMain;
     TextView recordMain, toolMain;
@@ -44,6 +47,10 @@ public class SettingsActivity2 extends AppCompatActivity {
         recordMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                YoYo.with(Techniques.Tada)
+                        .duration(700)
+                        .repeat(1)
+                        .playOn(findViewById(R.id.text_record));
                 Intent intent = new Intent(getApplicationContext(), LuckRecordActivity.class);
                 startActivity(intent);
             }
@@ -60,6 +67,10 @@ public class SettingsActivity2 extends AppCompatActivity {
         toolMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                YoYo.with(Techniques.Tada)
+                        .duration(700)
+                        .repeat(1)
+                        .playOn(findViewById(R.id.text_tool));
                 Intent intent = new Intent(getApplicationContext(), SettingsActivity2.class);
                 startActivity(intent);
             }

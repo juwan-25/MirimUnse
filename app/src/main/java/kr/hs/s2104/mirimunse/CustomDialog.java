@@ -66,7 +66,6 @@ public class CustomDialog extends Dialog implements DialogInterface.OnClickListe
             switch (v.getId()){
                 case R.id.btn_sp:
                     if(editSave.length() == 0){
-                        // TODO: 커스텀 토스트 xml 적용시키기
                         textToast.setText("제목을 입력해주세요.");
                         toast.show();
                     }
