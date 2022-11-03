@@ -26,7 +26,7 @@ public class LuckRecordDetailActivity extends AppCompatActivity {
     TextView textTitle, textCont;
 
     private Intent intent;
-    String mname;
+    String name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +34,7 @@ public class LuckRecordDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_luck_record_detail);
 
         intent = getIntent();
-        mname = intent.getStringExtra("mname");
+        name = intent.getStringExtra("mname");
 
         imgCard = findViewById(R.id.card_detail);
         textTitle = findViewById(R.id.text_record_tit);

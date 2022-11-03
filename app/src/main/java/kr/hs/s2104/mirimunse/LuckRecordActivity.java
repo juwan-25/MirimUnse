@@ -21,6 +21,7 @@ import android.widget.TextView;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 
+import java.sql.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,9 +30,12 @@ public class LuckRecordActivity extends AppCompatActivity {
     private static final float FONT_SIZE = 15;
     private LinearLayout container; // 부모 뷰
 
-    private RecyclerView mRecyclerView;
-    private MyRecyclerAdapter mRecyclerAdapter;
+    // 저장한 운세 이름 정보
     private ArrayList<FriendItem> mfriendItems;
+
+//  리사이클러뷰
+    RecyclerView mRecyclerView;
+    MyRecyclerAdapter mRecyclerAdapter;
 
     TextView toolMain, unseRecord;
     ImageView checkMain;
@@ -56,6 +60,7 @@ public class LuckRecordActivity extends AppCompatActivity {
         String unseTitle; //db에서 운세 title 받아올 용도
         int recodeCount = cCnt.getInt(0);
 
+        // 리사이클러 뷰
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
 
         /* initiate adapter */
@@ -67,10 +72,21 @@ public class LuckRecordActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL,false));
 
         mfriendItems = new ArrayList<>();
-        // 예시 데이터 넣기
-        for(int i=0;i<recodeCount;i++){
-            mfriendItems.add(new FriendItem(R.drawable.dot, i+"번째 사람",R.drawable.threedot));
-        }
+//        // 예시 데이터 넣기
+//        for(int i=0;i<recodeCount;i++){
+//            mfriendItems.add(new FriendItem(R.drawable.dot, i+"번째 사람",R.drawable.threedot));
+//        }
+//        Intent intent = new Intent(this, FriendItem.class);
+//        intent.putExtra("이름", unseTitle);
+
+        // 리사이클러뷰 데이터값 설정
+        mfriendItems = new ArrayList<>();
+           int id = -1;
+           // db테이블 행 개수로 바꾸기
+           for(int i=0; i<recodeCount; i++) {
+              mfriendItems.add(new FriendItem(R.drawable.dot, unseTitle, R.drawable.threedot));
+           }
+
 
         mRecyclerAdapter.setFriendList(mfriendItems);
 
