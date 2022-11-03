@@ -40,15 +40,6 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
         //holder.onBind(mFriendList.get(position));
         holder.itemView.setTag(position);
         holder.name.setText(mFriendList.get(position).getName());
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String mname = holder.name.getText().toString();
-                Intent intent;
-                intent = new Intent(context, LuckRecordDetailActivity.class);
-                intent.putExtra("mname", mname);
-            }
-        });
     }
 
     public void setFriendList(ArrayList<FriendItem> list){
