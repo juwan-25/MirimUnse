@@ -84,6 +84,7 @@ public class LuckRecordActivity extends AppCompatActivity {
            int id = -1;
            // db테이블 행 개수로 바꾸기
            for(int i=0; i<recodeCount; i++) {
+              unseTitle = cTitle.getString(0);
               mfriendItems.add(new FriendItem(R.drawable.dot, unseTitle, R.drawable.threedot));
            }
 
