@@ -5,12 +5,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Paint;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.style.UnderlineSpan;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
@@ -23,10 +28,12 @@ public class LuckRecordDetailActivity extends AppCompatActivity {
     TextView recordMain, toolMain;
 
     ImageView imgCard;
-    TextView textTitle, textCont;
+    TextView textUserTitle, textTitle, textCont;
 
     private Intent intent;
     String name;
+
+    static int id = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +44,7 @@ public class LuckRecordDetailActivity extends AppCompatActivity {
         name = intent.getStringExtra("mname");
 
         imgCard = findViewById(R.id.card_detail);
+        textUserTitle = findViewById(R.id.text_user_title);
         textTitle = findViewById(R.id.text_record_tit);
         textCont = findViewById(R.id.text_record_cont);
 
@@ -46,12 +54,15 @@ public class LuckRecordDetailActivity extends AppCompatActivity {
         Cursor c = db.rawQuery("SELECT * FROM RecordFortunes;", null);
 
         //아이디값만큼 for문 돌리기
-        int id = 4 ; //임시값
-        for(int i = 0; i<id; i++)
+        for(int i = 0; i<=id; i++)
             c.moveToNext();
+
         imgCard.setImageResource(Integer.parseInt(c.getString(3)));
-        textTitle.setText(c.getString(1));
-        textCont.setText(c.getString(2));
+        textUserTitle.setText(c.getString(0).toString());
+        textTitle.setText(c.getString(1).toString());
+        textCont.setText(c.getString(2).toString());
+
+        textUserTitle.setPaintFlags(textUserTitle.getPaintFlags() |   Paint.UNDERLINE_TEXT_FLAG);
 
         // 하단 바
         recordMain = findViewById(R.id.text_record);    // 보관함 버튼 연결
@@ -87,5 +98,10 @@ public class LuckRecordDetailActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    public static void getContet(int pos){
+        id = pos;
+        Log.d("값 전달", id+"를 받앗슈");
     }
 }

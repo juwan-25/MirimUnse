@@ -48,8 +48,8 @@
                 android:textSize="12dp"
                 />
 
-            <EditText
-                android:id="@+id/edit_title"
+            <TextView
+                android:id="@+id/text_user_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/notoserif"
@@ -91,7 +91,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/notoserif"
             android:gravity="center"
-            android:text="매점 아줌마한테 간식 얻어먹을 것만 같은 날"
+            android:text="운세 제목"
             android:textColor="#fff"
             android:textSize="17dp"
             android:textStyle="bold" />
@@ -103,7 +103,7 @@
             android:fontFamily="@font/notoserif"
             android:gravity="center"
             android:padding="15dp"
-            android:text="매점을 들려 맛있는 간식을 사먹는다면..\n행복해지고 말 거야\n매점 아주머니께서 맛있는 걸 덤으로 주실지도!!\n간식처럼 달콤한 하루를 보내자~"
+            android:text="운세 내용"
             android:textColor="#fff"
             android:textSize="14dp" />
     </LinearLayout>

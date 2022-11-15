@@ -117,6 +117,8 @@ public class LuckRecordActivity extends AppCompatActivity {
             @Override
             public void onItemClick(View v, int pos) {
                 //getCertInfo = mfriendItems.get(pos);
+                LuckRecordDetailActivity.getContet(pos);
+                Log.d("값 전달", "보냇어유"+pos);
             }
         });
 
@@ -125,8 +127,8 @@ public class LuckRecordActivity extends AppCompatActivity {
                 new MyRecyclerAdapter.OnItemCliskListener() {
                     @Override
                     public void onItemClick(View v, int pos) {
-                        Intent intent = new Intent(getApplicationContext(), LuckRecordDetailActivity.class);
-                        startActivity(intent);
+//                        Intent intent = new Intent(getApplicationContext(), LuckRecordDetailActivity.class);
+//                        startActivity(intent);
                     }
                 }
         );
