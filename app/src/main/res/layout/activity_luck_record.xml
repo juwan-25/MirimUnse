@@ -26,22 +26,23 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:padding="15dp"
-        android:orientation="vertical">
+        android:layout_height="458dp"
+        android:orientation="vertical"
+        android:padding="15dp">
 
-    // 왼쪽 라인 이미지
-    <ImageView
-        android:layout_width="wrap_content"
-        android:paddingTop="35dp"
-        android:paddingLeft="14dp"
-        android:layout_height="550dp"
-        android:src="@drawable/line"/>
+        // 왼쪽 라인 이미지
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="14dp"
+            android:paddingTop="35dp"
+            android:src="@drawable/line" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
     </FrameLayout>
 
 
