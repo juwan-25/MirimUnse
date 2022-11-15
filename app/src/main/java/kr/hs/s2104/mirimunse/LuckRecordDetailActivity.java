@@ -46,7 +46,7 @@ public class LuckRecordDetailActivity extends AppCompatActivity {
         Cursor c = db.rawQuery("SELECT * FROM RecordFortunes;", null);
 
         //아이디값만큼 for문 돌리기
-        int id = 6; //임시값
+        int id = 4 ; //임시값
         for(int i = 0; i<id; i++)
             c.moveToNext();
         imgCard.setImageResource(Integer.parseInt(c.getString(3)));
