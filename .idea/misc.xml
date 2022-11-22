@@ -40,9 +40,11 @@
         <entry key="..\:/mirim_Android/MirimUnse/app/src/main/res/drawable/background.xml" value="0.14" />
         <entry key="..\:/mirim_Android/MirimUnse/app/src/main/res/drawable/background2.xml" value="0.1015" />
         <entry key="..\:/mirim_Android/MirimUnse/app/src/main/res/drawable/bg_spinner_month.xml" value="0.1" />
+        <entry key="..\:/mirim_Android/MirimUnse/app/src/main/res/drawable/custom_ripple_maincard.xml" value="0.149" />
         <entry key="..\:/mirim_Android/MirimUnse/app/src/main/res/drawable/settings_detail.xml" value="0.2025" />
         <entry key="..\:/mirim_Android/MirimUnse/app/src/main/res/font/font.xml" value="0.18425925925925926" />
         <entry key="..\:/mirim_Android/MirimUnse/app/src/main/res/layout/activity_dialog.xml" value="0.3423913043478261" />
+        <entry key="..\:/mirim_Android/MirimUnse/app/src/main/res/layout/activity_infor.xml" value="0.1" />
         <entry key="..\:/mirim_Android/MirimUnse/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/mirim_Android/MirimUnse/app/src/main/res/layout/activity_luck_check.xml" value="0.25" />
         <entry key="..\:/mirim_Android/MirimUnse/app/src/main/res/layout/activity_luck_check2.xml" value="0.1" />

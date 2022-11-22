@@ -40,6 +40,6 @@
             android:layout_height="wrap_content"
             android:textColor="#FFFFFF"
             android:textSize="30dp"
-            android:text="클릭하기"/>
+            android:text="Click"/>
     </FrameLayout>
 </LinearLayout>
