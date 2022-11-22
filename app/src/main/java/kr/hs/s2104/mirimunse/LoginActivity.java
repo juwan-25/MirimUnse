@@ -29,7 +29,6 @@ public class LoginActivity extends AppCompatActivity {
     private EditText editPass;
     private Button btnLogin;
     private TextView btnSignTo;
-    //로그인 된 마이페이지 상태로 바꾸어 주어야 함
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,13 +103,11 @@ public class LoginActivity extends AppCompatActivity {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 //로그인 된 마이페이지 상태로 바꾸어 주어야 함
                 if (user != null) {
-                    Intent intent = new Intent(LoginActivity.this, SettingsActivity2.class);
+                    Intent intent = new Intent(LoginActivity.this, SettingsActivity.class);
+                    intent.putExtra("login", "true" );
                     startActivity(intent);
                     finish();
                 } else {
-                    Intent intent = new Intent(LoginActivity.this, SettingsActivity.class);
-                    startActivity(intent);
-                    finish();
                 }
             }
         };
@@ -125,9 +122,6 @@ public class LoginActivity extends AppCompatActivity {
                             // 로그인 성공
                             Toast.makeText(LoginActivity.this, "로그인 성공", Toast.LENGTH_SHORT).show();
                             firebaseAuth.addAuthStateListener(firebaseAuthListener);
-                            Intent intent = new Intent(LoginActivity.this, SettingsActivity2.class);
-                            startActivity(intent);
-                            finish();
                         } else {
                             // 로그인 실패
                             Toast.makeText(LoginActivity.this, "아이디 또는 비밀번호가 일치하지 않습니다.", Toast.LENGTH_SHORT).show();

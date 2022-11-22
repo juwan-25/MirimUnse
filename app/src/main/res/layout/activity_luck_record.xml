@@ -26,9 +26,10 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="595dp"
-        android:orientation="vertical"
-        android:padding="15dp">
+        android:layout_height="0dp"
+        android:padding="15dp"
+        android:layout_weight="3"
+        android:orientation="vertical">
 
         // 왼쪽 라인 이미지
         <ImageView
@@ -93,18 +94,15 @@
 <!--        </ScrollView>-->
 <!--    </FrameLayout>-->
 
-    //바텀바
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+
         <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true">
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.55">
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="wrap_content"
                 android:paddingTop="46dp"
                 android:src="@drawable/bottombar" />
             <LinearLayout
@@ -138,6 +136,5 @@
                     android:textColor="#80ffffff"/>
             </LinearLayout>
         </FrameLayout>
-    </RelativeLayout>
 
 </LinearLayout>

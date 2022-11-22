@@ -7,7 +7,7 @@
     android:background="@drawable/background"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    tools:context=".LuckCheckDetailActivity">
+    tools:context=".SettingsActivity2">
     <!--툴바-->
     <FrameLayout
         android:layout_width="wrap_content"

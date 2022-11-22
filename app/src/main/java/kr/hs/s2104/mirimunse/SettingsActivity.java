@@ -1,5 +1,6 @@
 package kr.hs.s2104.mirimunse;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 
@@ -15,23 +16,65 @@ import android.widget.TextView;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
+import java.util.Arrays;
+
 public class SettingsActivity extends AppCompatActivity {
-    ImageView checkMain;
-    TextView recordMain, toolMain;
+    ImageView checkMain, imgProfile;
+    TextView recordMain, toolMain, textId, textName;
     Button btnToLogin, btnToInfo;
+    String btnString;
+    static boolean loginCk = false;
+    private FirebaseAuth firebaseAuth;
+    private FirebaseAuth.AuthStateListener firebaseAuthListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
+        imgProfile = findViewById(R.id.profile);
+        textId = findViewById(R.id.text_set_id);
+        textName = findViewById(R.id.text_set_name);
+        btnToLogin = findViewById(R.id.btn_to_login);
+        btnString = "로그인";
+
+        firebaseAuth = FirebaseAuth.getInstance();
+        FirebaseUser user;
+        if(firebaseAuth.getCurrentUser()==null){
+            imgProfile.setImageResource(R.drawable.mainunbtn_img);
+            textId.setText("로그인이 필요합니다");
+            textName.setText("로그인이 필요합니다");
+            btnString = "로그인";
+            btnToLogin.setText(btnString);
+        } else {
+            user = firebaseAuth.getCurrentUser();
+            imgProfile.setImageResource(R.drawable.mainbtn_img);
+            String str[] = user.getEmail().split("@");
+            textId.setText(user.getEmail());
+            textName.setText(str[0]);
+            btnString = "로그아웃";
+            btnToLogin.setText(btnString);
+        }
+
+
+
 
         //로그인 버튼 연결
         btnToLogin = findViewById(R.id.btn_to_login);
         btnToLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-                startActivity(intent);
+                if(btnString.equals("로그인")) {
+                    Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                    startActivity(intent);
+                } else {
+                    firebaseAuth.signOut();
+                    finish();
+                    Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
+                    startActivity(intent);
+                }
             }
         });
 
@@ -78,5 +121,8 @@ public class SettingsActivity extends AppCompatActivity {
             }
         });
 
+
     }
+
+
 }

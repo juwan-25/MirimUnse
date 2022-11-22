@@ -47,9 +47,9 @@
     </LinearLayout>
     <!--바텀바-->
     <FrameLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.5"
+        android:layout_weight="0.53"
         android:layout_marginTop="3px">
         <ImageView
             android:paddingTop="45dp"
