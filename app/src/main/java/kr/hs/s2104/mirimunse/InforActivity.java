@@ -2,6 +2,8 @@ package kr.hs.s2104.mirimunse;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,31 +14,22 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import kr.hs.s2104.mirimunse.recyclerviewarcodian.DataInfor;
+import kr.hs.s2104.mirimunse.recyclerviewarcodian.RecyclerVierAdapter;
+
 public class InforActivity extends AppCompatActivity {
     ImageView checkMain;
     TextView recordMain, toolMain;
-    String[] detail1 = {"개발툴", "Android Studio Java"};
-    String[] detail2 = {"개발 참여자", "2102 김윤서", "2104 백지민", "2211이주완"};
-    String[] detail3 = {"개발기간", "2022.07.25~"};
-    Button btnToLogin;
+    RecyclerVierAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_infor);
 
-        Spinner spinner1 = findViewById(R.id.spinner1);
-        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, detail1);
-        spinner1.setAdapter(adapter1);
-
-        Spinner spinner2 = findViewById(R.id.spinner2);
-        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, detail2);
-        spinner2.setAdapter(adapter2);
-
-        Spinner spinner3 = findViewById(R.id.spinner3);
-        ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, detail3);
-        spinner3.setAdapter(adapter3);
-
+        // 아코디언
+        init();
+        getData();
 
         // 하단 바
         recordMain = findViewById(R.id.text_record);    // 보관함 버튼 연결
@@ -64,5 +57,26 @@ public class InforActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+
+    private void init(){
+        RecyclerView recyclerView = findViewById(R.id.recycler_infor);
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(linearLayoutManager);
+
+        adapter = new RecyclerVierAdapter();
+        recyclerView.setAdapter(adapter);
+    }
+
+    private void getData(){
+
+        DataInfor data = new DataInfor("개발툴", "Android Studio Java");
+        adapter.addItem(data);
+        data = new DataInfor("개발 참여자", "미림마이스터고 김윤서, 백지민, 이주완");
+        adapter.addItem(data);
+        data = new DataInfor("개발기간", "2022.07.25~");
+        adapter.addItem(data);
     }
 }
