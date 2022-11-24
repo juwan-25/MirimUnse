@@ -93,7 +93,7 @@ public class LoginActivity extends AppCompatActivity {
                 finish();
             }
         });
-        // 이메일, 비밀번호 입력 여부 확인
+        // 이메일, 비밀번호 공백이 아닌경우 이메일, 비밀번호 loginUser로 넘겨주기
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

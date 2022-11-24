@@ -16,8 +16,6 @@ import android.widget.TextView;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 
-import java.util.Random;
-
 // 홈 : 카드 선택 결과
 public class LuckCheckDetailActivity extends AppCompatActivity {
     ImageView checkMain;
@@ -65,7 +63,6 @@ public class LuckCheckDetailActivity extends AppCompatActivity {
         db = dbHelper.getWritableDatabase();
         Cursor c = db.rawQuery("SELECT * FROM ContentsFortunes;", null);
 
-        Random random = new Random();
         int i = (int)(Math.random()*9)+1;
         for(int j=0; j<i; j++) c.moveToNext();
 

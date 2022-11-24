@@ -18,6 +18,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 // 마이페이지 : 본인 정보 확인
 public class SettingsActivity extends AppCompatActivity {
+
     // firebase
     private FirebaseAuth firebaseAuth;
 
