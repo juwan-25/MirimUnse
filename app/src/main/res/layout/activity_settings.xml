@@ -37,10 +37,10 @@
         android:orientation="vertical">
 
         <FrameLayout
-            android:layout_marginTop="40dp"
-            android:layout_gravity="center"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_gravity="center">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -54,9 +54,9 @@
         </FrameLayout>
 
         <LinearLayout
-            android:layout_marginTop="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:layout_gravity="center"
             android:orientation="vertical">
 
@@ -79,10 +79,10 @@
 
                 <TextView
                     android:id="@+id/text_set_id"
-                    android:text="로그인이 필요합니다"
-                    android:gravity="center"
                     android:layout_width="130dp"
                     android:layout_height="wrap_content"
+                    android:text="로그인이 필요합니다"
+                    android:gravity="center"
                     android:layout_gravity="center"
                     android:fontFamily="@font/notoserif"
                     android:background="@android:color/transparent"
@@ -93,9 +93,9 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_marginTop="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:layout_gravity="center"
             android:orientation="vertical">
 
@@ -118,10 +118,10 @@
 
                 <TextView
                     android:id="@+id/text_set_name"
-                    android:text="로그인이 필요합니다"
-                    android:gravity="center"
                     android:layout_width="130dp"
                     android:layout_height="wrap_content"
+                    android:text="로그인이 필요합니다"
+                    android:gravity="center"
                     android:layout_gravity="center"
                     android:fontFamily="@font/notoserif"
                     android:background="@android:color/transparent"
@@ -132,10 +132,10 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_marginTop="60dp"
-            android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:layout_gravity="center"
             android:orientation="horizontal">
 
             <!--로그인 버튼-->
@@ -151,10 +151,10 @@
 
             <!--정보 버튼-->
             <Button
-                android:layout_marginLeft="5dp"
                 android:id="@+id/btn_info"
                 android:layout_width="100dp"
                 android:layout_height="40dp"
+                android:layout_marginLeft="5dp"
                 android:background="@drawable/custom_ripple_setting"
                 android:fontFamily="@font/notoserif"
                 android:textColor="#FBDADA"
@@ -172,9 +172,9 @@
         android:layout_weight="0.38">
 
         <ImageView
-            android:paddingTop="45dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingTop="45dp"
             android:src="@drawable/bottombar"/>
 
         <LinearLayout
@@ -194,9 +194,9 @@
 
             <ImageView
                 android:id="@+id/btn_check"
-                android:layout_marginTop="10dp"
                 android:layout_width="0dp"
                 android:layout_height="85dp"
+                android:layout_marginTop="10dp"
                 android:layout_weight="1"
                 android:src="@drawable/mainunbtn_img"/>
 

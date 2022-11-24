@@ -13,21 +13,21 @@
         android:layout_height="wrap_content">
 
         <TextView
+            android:id="@+id/text_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:textColor="#FBDADA"
             android:gravity="left"
             android:textSize="16dp"
-            android:fontFamily="@font/notoserif"
-            android:id="@+id/text_title"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:fontFamily="@font/notoserif"/>
     </LinearLayout>
 
     <TextView
+        android:id="@+id/text_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#FBDADA"
         android:textColor="#5B3084"
-        android:id="@+id/text_content"
         android:fontFamily="@font/notoserif"
         android:scaleType="centerCrop"
         android:text="내용"
