@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,8 +7,8 @@
     android:orientation="vertical"
     android:gravity="center_horizontal"
     tools:context=".InforActivity">
+
     <!--툴바-->
-    // 커밋
     <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
@@ -25,6 +24,7 @@
             android:src="@drawable/logo"/>
     </FrameLayout>
 
+    <!--정보 내용-->
     <LinearLayout
         android:layout_width="337dp"
         android:layout_height="0dp"
@@ -120,24 +120,27 @@
                 android:thumb="@drawable/switch_thumb"
                 android:track="@drawable/switch_selector" />
 
-
         </LinearLayout>
     </LinearLayout>
+
 
     <!--바텀바-->
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.372">
+
         <ImageView
             android:paddingTop="45dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:src="@drawable/bottombar"/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <TextView
                 android:id="@+id/text_record"
                 android:layout_width="0dp"
@@ -147,6 +150,7 @@
                 android:paddingTop="62dp"
                 android:text="보관함"
                 android:textColor="#80ffffff"/>
+
             <ImageView
                 android:id="@+id/btn_check"
                 android:layout_marginTop="10dp"
@@ -154,6 +158,7 @@
                 android:layout_height="85dp"
                 android:layout_weight="1"
                 android:src="@drawable/mainunbtn_img"/>
+
             <TextView
                 android:id="@+id/text_tool"
                 android:layout_width="0dp"
@@ -163,6 +168,7 @@
                 android:paddingTop="62dp"
                 android:text="설정"
                 android:textColor="#E7998D"/>
+
         </LinearLayout>
     </FrameLayout>
 </LinearLayout>

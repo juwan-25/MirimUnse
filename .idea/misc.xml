@@ -44,8 +44,8 @@
         <entry key="..\:/mirim_Android/MirimUnse/app/src/main/res/drawable/settings_detail.xml" value="0.2025" />
         <entry key="..\:/mirim_Android/MirimUnse/app/src/main/res/font/font.xml" value="0.18425925925925926" />
         <entry key="..\:/mirim_Android/MirimUnse/app/src/main/res/layout/activity_dialog.xml" value="0.3423913043478261" />
-        <entry key="..\:/mirim_Android/MirimUnse/app/src/main/res/layout/activity_infor.xml" value="0.1" />
-        <entry key="..\:/mirim_Android/MirimUnse/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/mirim_Android/MirimUnse/app/src/main/res/layout/activity_infor.xml" value="0.22" />
+        <entry key="..\:/mirim_Android/MirimUnse/app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="..\:/mirim_Android/MirimUnse/app/src/main/res/layout/activity_luck_check.xml" value="0.25" />
         <entry key="..\:/mirim_Android/MirimUnse/app/src/main/res/layout/activity_luck_check2.xml" value="0.1" />
         <entry key="..\:/mirim_Android/MirimUnse/app/src/main/res/layout/activity_luck_check_detail.xml" value="0.25" />
@@ -53,9 +53,9 @@
         <entry key="..\:/mirim_Android/MirimUnse/app/src/main/res/layout/activity_luck_record_detail.xml" value="0.25" />
         <entry key="..\:/mirim_Android/MirimUnse/app/src/main/res/layout/activity_luck_record_detail2.xml" value="0.1" />
         <entry key="..\:/mirim_Android/MirimUnse/app/src/main/res/layout/activity_main.xml" value="0.1770516717325228" />
-        <entry key="..\:/mirim_Android/MirimUnse/app/src/main/res/layout/activity_settings.xml" value="0.22624434389140272" />
+        <entry key="..\:/mirim_Android/MirimUnse/app/src/main/res/layout/activity_settings.xml" value="0.2" />
         <entry key="..\:/mirim_Android/MirimUnse/app/src/main/res/layout/activity_settings2.xml" value="0.22" />
-        <entry key="..\:/mirim_Android/MirimUnse/app/src/main/res/layout/activity_sign_up.xml" value="0.1" />
+        <entry key="..\:/mirim_Android/MirimUnse/app/src/main/res/layout/activity_sign_up.xml" value="0.22" />
         <entry key="..\:/mirim_Android/MirimUnse/app/src/main/res/layout/backgroung_layout.xml" value="0.1770516717325228" />
         <entry key="..\:/mirim_Android/MirimUnse/app/src/main/res/layout/bg_spinner_year.xml" value="0.1" />
         <entry key="..\:/mirim_Android/MirimUnse/app/src/main/res/layout/dialog01.xml" value="0.22131147540983606" />
@@ -63,6 +63,7 @@
         <entry key="..\:/mirim_Android/MirimUnse/app/src/main/res/layout/item_spinner.xml" value="0.3640625" />
         <entry key="..\:/mirim_Android/MirimUnse/app/src/main/res/layout/setting.xml" value="0.25" />
         <entry key="..\:/mirim_Android/MirimUnse/app/src/main/res/layout/settings_detail.xml" value="0.1" />
+        <entry key="..\:/mirim_Android/MirimUnse/app/src/main/res/layout/toast_custom.xml" value="0.22" />
         <entry key="..\:/mirim_Android/MirimUnse/app/src/main/res/layout/value.xml" value="0.3640625" />
       </map>
     </option>

@@ -7,92 +7,110 @@
     android:background="@drawable/background"
     android:orientation="vertical"
     tools:context=".LuckCheckDetailActivity">
+
     <!--툴바-->
     <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
+
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:src="@drawable/toolbar"/>
+
         <ImageView
             android:id="@+id/logo"
             android:layout_width="85dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:src="@drawable/logo"/>
+
     </FrameLayout>
 
+
+    <!-- 운세 내용-->
     <ScrollView
         android:layout_weight="3"
         android:layout_width="match_parent"
         android:layout_height="0dp">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <FrameLayout
-            android:layout_marginTop="10dp"
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="400dp">
-            <ImageView
-                android:layout_width="230dp"
-                android:layout_height="330dp"
-                android:layout_gravity="center"
-                android:src="@drawable/card_check_detail"/>
-            <ImageView
-                android:id="@+id/card_detail"
-                android:layout_gravity="center"
-                android:layout_width="150dp"
-                android:layout_height="250dp"
-                android:layout_marginLeft="34dp"
-                android:layout_marginBottom="2dp"
-                android:src="@drawable/img_riches_good"/>
-            <ImageView
-                android:id="@+id/btn_share"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="95dp"
-                android:layout_gravity="bottom"
-                android:paddingLeft="205dp"
-                android:paddingBottom="58dp"
-                android:src="@drawable/btn_share"/>
-        </FrameLayout>
-        <TextView
-            android:id="@+id/text_check_tit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/notoserif"
-            android:textSize="17dp"
-            android:textColor="#fff"
-            android:textStyle="bold"
-            android:text="운세 타이틀"
-            android:gravity="center"/>
-        <TextView
-            android:id="@+id/text_check_cont"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="15dp"
-            android:gravity="center"
-            android:text="운세 내용"
-            android:textSize="14dp"
-            android:fontFamily="@font/notoserif"
-            android:textColor="#fff"
-            android:layout_marginBottom="20dp"/>
-        <ImageView
-            android:id="@+id/btn_save"
-            android:layout_margin="40dp"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:background="@drawable/custom_ripple_btnsave"
-            android:layout_gravity="center"/>
-    </LinearLayout>
+                android:layout_height="400dp">
+
+                <ImageView
+                    android:layout_width="230dp"
+                    android:layout_height="330dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/card_check_detail"/>
+
+                <ImageView
+                    android:id="@+id/card_detail"
+                    android:layout_gravity="center"
+                    android:layout_width="150dp"
+                    android:layout_height="250dp"
+                    android:layout_marginLeft="34dp"
+                    android:layout_marginBottom="2dp"
+                    android:src="@drawable/img_riches_good"/>
+
+                <ImageView
+                    android:id="@+id/btn_share"
+                    android:layout_width="match_parent"
+                    android:layout_height="95dp"
+                    android:layout_gravity="bottom"
+                    android:paddingLeft="205dp"
+                    android:paddingBottom="58dp"
+                    android:src="@drawable/btn_share"/>
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/text_check_tit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notoserif"
+                android:textSize="17dp"
+                android:textColor="#fff"
+                android:textStyle="bold"
+                android:text="운세 타이틀"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/text_check_cont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:gravity="center"
+                android:text="운세 내용"
+                android:textSize="14dp"
+                android:fontFamily="@font/notoserif"
+                android:textColor="#fff"
+                android:layout_marginBottom="20dp"/>
+
+            <ImageView
+                android:id="@+id/btn_save"
+                android:layout_margin="40dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/custom_ripple_btnsave"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
     </ScrollView>
+
+
     <!--바텀바-->
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.58"
         android:layout_marginTop="3px">
+
         <ImageView
             android:paddingTop="55dp"
             android:layout_width="match_parent"
@@ -132,5 +150,4 @@
 
         </LinearLayout>
     </FrameLayout>
-
 </LinearLayout>

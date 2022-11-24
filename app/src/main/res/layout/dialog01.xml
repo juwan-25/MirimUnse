@@ -16,6 +16,7 @@
         android:textStyle="bold"
         android:textSize="17dp"
         android:text="운세 결과 저장하기"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -23,6 +24,7 @@
         android:textColor="@color/btn_color"
         android:fontFamily="@font/notoserif"
         android:text="운세 결과의 제목을 적어보세요!"/>
+
     <EditText
         android:id="@+id/edit_save"
         android:layout_width="270dp"
@@ -39,6 +41,8 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center">
+
+        <!--저장하기 버튼-->
         <Button
             android:id="@+id/btn_sp"
             android:layout_width="120dp"
@@ -48,6 +52,8 @@
             android:textColor="#FBDADA"
             android:fontFamily="@font/notoserif"
             android:layout_margin="10dp"/>
+
+        <!--취소 버튼-->
         <Button
             android:id="@+id/btn_sn"
             android:layout_width="120dp"

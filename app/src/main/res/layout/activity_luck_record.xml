@@ -12,10 +12,12 @@
     <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
+
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:src="@drawable/toolbar"/>
+
         <ImageView
             android:id="@+id/logo"
             android:layout_width="85dp"
@@ -24,6 +26,8 @@
             android:src="@drawable/logo"/>
     </FrameLayout>
 
+
+    <!--recyclerview 내용-->
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -31,7 +35,7 @@
         android:layout_weight="3"
         android:orientation="vertical">
 
-        // 왼쪽 라인 이미지
+        <!--왼쪽 라인 이미지-->
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -44,58 +48,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"/>
+
     </FrameLayout>
 
 
-<!--        // 목록 스크롤뷰-->
-<!--        <ScrollView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:layout_weight="1">-->
-<!--        <FrameLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="34px">-->
-
-<!--            // LinearLayout id parent (추가되는 목록)-->
-<!--            <LinearLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="300dp"-->
-<!--                android:orientation="vertical"-->
-<!--                android:id="@+id/parent">-->
-
-<!--                <TextView-->
-<!--                    android:id="@+id/textv"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_gravity="center"-->
-<!--                    android:drawableLeft="@drawable/dot"-->
-<!--                    android:drawableRight="@drawable/threedot"-->
-<!--                    android:drawablePadding="15dp"-->
-<!--                    android:paddingBottom="10dp"-->
-<!--                    android:scrollbars="none"-->
-<!--                    android:text="unse_edit_name"-->
-<!--                    android:textColor="#FBDADA"-->
-<!--                    android:textSize="15sp" />-->
-
-<!--                <LinearLayout-->
-<!--                    android:id="@+id/original_list"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="450dp"-->
-<!--                    android:orientation="horizontal"-->
-<!--                    android:paddingTop="60dp">-->
-
-<!--                </LinearLayout>-->
-<!--            </LinearLayout>-->
-
-<!--            // 기본 목록 1개-->
-
-<!--        </FrameLayout>-->
-<!--        </ScrollView>-->
-<!--    </FrameLayout>-->
-
-
-        <FrameLayout
+    <!--바텀바-->
+    <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="0.55">
@@ -105,10 +63,12 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="46dp"
                 android:src="@drawable/bottombar" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
+
                 <TextView
                     android:id="@+id/text_record"
                     android:layout_width="0dp"
@@ -118,6 +78,7 @@
                     android:paddingTop="62dp"
                     android:text="보관함"
                     android:textColor="#E7998D"/>
+
                 <ImageView
                     android:id="@+id/btn_check"
                     android:layout_marginTop="10dp"
@@ -125,6 +86,7 @@
                     android:layout_height="85dp"
                     android:layout_weight="1"
                     android:src="@drawable/mainunbtn_img"/>
+
                 <TextView
                     android:id="@+id/text_tool"
                     android:layout_width="0dp"
@@ -134,6 +96,7 @@
                     android:paddingTop="62dp"
                     android:text="설정"
                     android:textColor="#80ffffff"/>
+
             </LinearLayout>
         </FrameLayout>
 
