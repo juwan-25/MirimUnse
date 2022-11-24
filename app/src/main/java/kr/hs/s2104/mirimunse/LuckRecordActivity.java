@@ -8,26 +8,15 @@ import android.app.ListActivity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import com.daimajia.androidanimations.library.Techniques;
-import com.daimajia.androidanimations.library.YoYo;
-import com.google.android.gms.common.internal.constants.ListAppsActivityContract;
-
-import java.sql.Array;
 import java.util.ArrayList;
-import java.util.List;
 
+// 보관함 : 저장 운세 리스트
 public class LuckRecordActivity extends AppCompatActivity {
 
     private static final float FONT_SIZE = 15;
@@ -35,10 +24,10 @@ public class LuckRecordActivity extends AppCompatActivity {
 
     private ListActivity getCertInfo;
 
-    // 저장한 운세 이름 정보
+    // 저장한 운세된 이름 정보
     private ArrayList<FriendItem> mfriendItems;
 
-//  리사이클러뷰
+    // 리사이클러뷰
     RecyclerView mRecyclerView;
     MyRecyclerAdapter mRecyclerAdapter;
 
@@ -53,12 +42,10 @@ public class LuckRecordActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_luck_record);
+
+        // DB
         dbHelper = new DatabaseHelper(this);
         db = dbHelper.getWritableDatabase();
-//        list = findViewById(R.id.original_list);
-//        unseRecord = findViewById(R.id.name);
-//        list.setVisibility(View.INVISIBLE); // 기본 목록 텍스트뷰 안 보이게 설정
-
         Cursor cCnt = db.rawQuery("SELECT count(*) FROM RecordFortunes;", null);
         cCnt.moveToNext();
         Cursor cTitle = db.rawQuery("SELECT * FROM RecordFortunes;", null);
@@ -68,22 +55,16 @@ public class LuckRecordActivity extends AppCompatActivity {
 
         // 리사이클러 뷰
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-
-        /* initiate adapter */
         mRecyclerAdapter = new MyRecyclerAdapter();
-
-        /* initiate recyclerview */
         mRecyclerView.setAdapter(mRecyclerAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL,false));
 
         mfriendItems = new ArrayList<>();
-//        // 예시 데이터 넣기
-//        for(int i=0;i<recodeCount;i++){
-//            mfriendItems.add(new FriendItem(R.drawable.dot, i+"번째 사람",R.drawable.threedot));
-//        }
-//        Intent intent = new Intent(this, FriendItem.class);
-//        intent.putExtra("이름", unseTitle);
+
+        // 하단바
+        toolMain = findViewById(R.id.text_tool);    // 마이페이지 연결
+        checkMain = findViewById(R.id.btn_check);   // 홈 연결
 
         for(int i = 0; i<recodeCount; i++){
             cTitle.moveToNext();
@@ -96,23 +77,7 @@ public class LuckRecordActivity extends AppCompatActivity {
             mfriendItems.add(new FriendItem(R.drawable.dot, unseTitle, R.drawable.threedot));
         }
 
-        //bindList();
-
         mRecyclerAdapter.setFriendList(mfriendItems);
-
-
-        //부모 뷰
-//        container = (LinearLayout) findViewById(R.id.parent);
-        // recyclerview
-//        record = findViewById(R.id.recyclerView);
-//        record.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(getApplicationContext(), LuckRecordDetailActivity.class);
-//                startActivity(intent);
-//            }
-//        });
-
         mRecyclerAdapter.setOnItemClickListener(new MyRecyclerAdapter.OnItemCliskListener() {
             @Override
             public void onItemClick(View v, int pos) {
@@ -127,26 +92,18 @@ public class LuckRecordActivity extends AppCompatActivity {
                 new MyRecyclerAdapter.OnItemCliskListener() {
                     @Override
                     public void onItemClick(View v, int pos) {
-//                        Intent intent = new Intent(getApplicationContext(), LuckRecordDetailActivity.class);
-//                        startActivity(intent);
                     }
                 }
         );
 
         // 하단 바
-        toolMain = findViewById(R.id.text_tool);
-        toolMain.setOnClickListener(new View.OnClickListener() {    // 설정 버튼 연결
+        toolMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                YoYo.with(Techniques.Tada)
-//                        .duration(700)
-//                        .repeat(1)
-//                        .playOn(findViewById(R.id.text_tool));
                 Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
                 startActivity(intent);
             }
         });
-        checkMain = findViewById(R.id.btn_check);   // 홈 버튼 연결
         checkMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -156,24 +113,6 @@ public class LuckRecordActivity extends AppCompatActivity {
         });
 
     }
-
-//    private void bindList() {
-//        // List item 생성
-//        final List<FriendItem> itemList = new ArrayList<>();
-//
-//        // Recycler iew adapter
-//        MyRecyclerAdapter adapter = new MyRecyclerAdapter(itemList);
-//
-//        // Recycler view item click event 처리
-//        adapter.setOnItemClickListener(new MyRecyclerAdapter.OnItemCliskListener() {
-//            @Override
-//            public void onItemClick(View v, int pos) {
-//                final FriendItem item = itemList.get(pos);
-//                Intent intent = new Intent(getApplicationContext(), LuckRecordDetailActivity.class);
-//                startActivity(intent);
-//            }
-//        });
-//    }
 
 
 }

@@ -22,9 +22,12 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+// 마이페이지 : 로그인
 public class LoginActivity extends AppCompatActivity {
+    //firebase auth
     private FirebaseAuth firebaseAuth;
     private FirebaseAuth.AuthStateListener firebaseAuthListener;
+
     private EditText editEmail;
     private EditText editPass;
     private Button btnLogin;
@@ -40,7 +43,9 @@ public class LoginActivity extends AppCompatActivity {
         editEmail = findViewById(R.id.edit_email);
         editPass = findViewById(R.id.edit_pass);
         btnSignTo = findViewById(R.id.btn_to_sign);
+        btnLogin = findViewById(R.id.btn_login);
 
+        // 이메일 입력 여부 확인하기
         editEmail.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -65,6 +70,8 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
+
+        // 회원가입으로 이동
         btnSignTo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -86,8 +93,7 @@ public class LoginActivity extends AppCompatActivity {
                 finish();
             }
         });
-
-        btnLogin = (Button) findViewById(R.id.btn_login);
+        // 이메일, 비밀번호 입력 여부 확인
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -96,23 +102,22 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
-
+        //로그인 확인 후 마이페이지 이동
         firebaseAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
-                //로그인 된 마이페이지 상태로 바꾸어 주어야 함
                 if (user != null) {
                     Intent intent = new Intent(LoginActivity.this, SettingsActivity.class);
                     intent.putExtra("login", "true" );
                     startActivity(intent);
                     finish();
-                } else {
                 }
             }
         };
     }
 
+    // 로그인하기
     public void loginUser(String email, String password) {
         firebaseAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {

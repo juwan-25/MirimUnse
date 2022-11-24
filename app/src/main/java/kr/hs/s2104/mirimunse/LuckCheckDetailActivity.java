@@ -3,29 +3,22 @@ package kr.hs.s2104.mirimunse;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Dialog;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.icu.text.LocaleDisplayNames;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.Window;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 
-import java.time.LocalDate;
 import java.util.Random;
 
+// 홈 : 카드 선택 결과
 public class LuckCheckDetailActivity extends AppCompatActivity {
     ImageView checkMain;
     TextView recordMain, toolMain;
@@ -41,6 +34,7 @@ public class LuckCheckDetailActivity extends AppCompatActivity {
 
     CustomDialog dialog;
 
+    // 운세별 이미지 배열
     int[] imgId = {
             R.drawable.img_riches_good, R.drawable.img_riches_good, R.drawable.img_friendship_good, R.drawable.img_friendship_bad, R.drawable.img_study_good,
             R.drawable.img_study_bad, R.drawable.img_health_good, R.drawable.img_health_bad, R.drawable.img_employ_good, R.drawable.img_employ_bad
@@ -59,7 +53,14 @@ public class LuckCheckDetailActivity extends AppCompatActivity {
         textCheckTit = findViewById(R.id.text_check_tit);
         textCheckCont = findViewById(R.id.text_check_cont);
 
-        //랜덤 기능
+        btnSave = findViewById(R.id.btn_save);
+
+        // 하단바
+        toolMain = findViewById(R.id.text_tool);    // 마이페이지 연결
+        checkMain = findViewById(R.id.btn_check);   // 홈 연결
+        recordMain = findViewById(R.id.text_record);    // 보관함 연결
+
+        // 랜덤 기능
         dbHelper = new DatabaseHelper(this);
         db = dbHelper.getWritableDatabase();
         Cursor c = db.rawQuery("SELECT * FROM ContentsFortunes;", null);
@@ -72,17 +73,17 @@ public class LuckCheckDetailActivity extends AppCompatActivity {
         fortuneCont = c.getString(2).replace("\\n", "\n");
         fortuneImg = imgId[i-1];
 
-        //DB에 저장할 수 있도록 값 넘기기
+        // DB에 저장할 수 있도록 값 넘기기
         CustomDialog.title = fortuneTit;
         CustomDialog.cont = fortuneCont;
         CustomDialog.img = Integer.toString(fortuneImg);
 
-        //텍스트뷰의 텍스트 지정
+        // 텍스트뷰의 텍스트 지정
         textCheckTit.setText(fortuneTit);
         textCheckCont.setText(fortuneCont);
         cardDetail.setImageResource(fortuneImg);
 
-        btnSave = findViewById(R.id.btn_save);
+        // 저장을 위한 다이얼로그 불러오기
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -92,7 +93,6 @@ public class LuckCheckDetailActivity extends AppCompatActivity {
         });
 
         //하단 바
-        recordMain = findViewById(R.id.text_record);    // 보관함 버튼 연결
         recordMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -104,7 +104,6 @@ public class LuckCheckDetailActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        checkMain = findViewById(R.id.btn_check);   // 홈 버튼 연결
         checkMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -112,7 +111,6 @@ public class LuckCheckDetailActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        toolMain = findViewById(R.id.text_tool);    // 설정 버튼 연결
         toolMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

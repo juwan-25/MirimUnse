@@ -10,11 +10,11 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 
+// 홈 : 카드 클릭 애니메이션
 public class LuckCheck2Activity extends AppCompatActivity {
     ImageView checkMain;
     TextView recordMain, toolMain;
@@ -25,7 +25,14 @@ public class LuckCheck2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_luck_check2);
 
-        cardCheck = findViewById(R.id.card_check);  // 카드 클릭 시 애니메이션
+        cardCheck = findViewById(R.id.card_check);
+
+        // 하단 바
+        toolMain = findViewById(R.id.text_tool);    // 마이페이지 연결
+        checkMain = findViewById(R.id.btn_check);   // 홈 연결
+        recordMain = findViewById(R.id.text_record);    // 보관함 연결
+
+        // 카드 클릭 시 애니메이션
         cardCheck.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -39,10 +46,9 @@ public class LuckCheck2Activity extends AppCompatActivity {
                 Intent intent = new Intent(LuckCheck2Activity.this, LuckCheckDetailActivity.class);
                 startActivity(intent);
             }
-        }, 4000);
+        }, 4000); // 화면 전환시 4초 딜레이
 
-        //하단 바
-        toolMain = findViewById(R.id.text_tool);    // 설정 버튼 연결
+        // 하단바
         toolMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -54,7 +60,6 @@ public class LuckCheck2Activity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        checkMain = findViewById(R.id.btn_check);   // 홈 버튼 연결
         checkMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -62,7 +67,6 @@ public class LuckCheck2Activity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        recordMain = findViewById(R.id.text_record);    // 보관함 버튼 연결
         recordMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

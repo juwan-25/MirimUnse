@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +19,7 @@ import androidx.annotation.RequiresApi;
 
 import java.time.LocalDate;
 
+// 운세 저장 다이얼로그 커스텀
 public class CustomDialog extends Dialog implements DialogInterface.OnClickListener {
     Button btn_save, btn_cancel;
     EditText editSave;
@@ -56,7 +56,7 @@ public class CustomDialog extends Dialog implements DialogInterface.OnClickListe
             db = dbHelper.getWritableDatabase();
 
             LayoutInflater inflater = getLayoutInflater();
-            View layoutToast = inflater.inflate(R.layout.toast_custom, (ViewGroup) findViewById(R.id.layout_toast));
+            View layoutToast = inflater.inflate(R.layout.toast_custom, findViewById(R.id.layout_toast));
             TextView textToast = layoutToast.findViewById(R.id.text_toast);
 
             Toast toast = new Toast(getContext());
@@ -70,13 +70,13 @@ public class CustomDialog extends Dialog implements DialogInterface.OnClickListe
                         toast.show();
                     }
                     else{
+                        // DB에 운세 내용 저장하기
                         db.execSQL("INSERT INTO RecordFortunes values('" +
                                 LocalDate.now().toString()+" "+editSave.getText().toString() + "', '" + title + "', '"+cont+"', "+img+
                                 ");");
 
                         ((MainActivity)MainActivity.mContext).changeActivity();
                     }
-
                     dismiss();
                 case R.id.btn_sn:
                     dismiss();

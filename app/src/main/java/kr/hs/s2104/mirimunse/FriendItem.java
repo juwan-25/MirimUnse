@@ -1,5 +1,6 @@
 package kr.hs.s2104.mirimunse;
 
+// 저장한 운세 정보 class
 public class FriendItem {
     String name;
     int message;

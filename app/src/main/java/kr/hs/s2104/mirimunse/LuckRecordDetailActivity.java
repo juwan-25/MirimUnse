@@ -7,19 +7,15 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Paint;
 import android.os.Bundle;
-import android.text.SpannableString;
-import android.text.style.UnderlineSpan;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 
+// 보관함 : 저장한 운세 내용
 public class LuckRecordDetailActivity extends AppCompatActivity {
     DatabaseHelper dbHelper;
     SQLiteDatabase db;
@@ -48,6 +44,11 @@ public class LuckRecordDetailActivity extends AppCompatActivity {
         textTitle = findViewById(R.id.text_record_tit);
         textCont = findViewById(R.id.text_record_cont);
 
+        // 하단바
+        toolMain = findViewById(R.id.text_tool);    // 마이페이지 연결
+        checkMain = findViewById(R.id.btn_check);   // 홈 연결
+        recordMain = findViewById(R.id.text_record);    // 보관함 연결
+
         // 운세 정보 불러오기
         dbHelper = new DatabaseHelper(this);
         db = dbHelper.getWritableDatabase();
@@ -65,7 +66,6 @@ public class LuckRecordDetailActivity extends AppCompatActivity {
         textUserTitle.setPaintFlags(textUserTitle.getPaintFlags() |   Paint.UNDERLINE_TEXT_FLAG);
 
         // 하단 바
-        recordMain = findViewById(R.id.text_record);    // 보관함 버튼 연결
         recordMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -77,7 +77,6 @@ public class LuckRecordDetailActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        checkMain = findViewById(R.id.btn_check);   // 홈 버튼 연결
         checkMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -85,7 +84,6 @@ public class LuckRecordDetailActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        toolMain = findViewById(R.id.text_tool);    // 설정 버튼 연결
         toolMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

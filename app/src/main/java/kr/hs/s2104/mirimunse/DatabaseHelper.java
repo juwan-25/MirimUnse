@@ -1,13 +1,8 @@
 package kr.hs.s2104.mirimunse;
 
-import android.content.ContentValues;
 import android.content.Context;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
-
-import androidx.annotation.Nullable;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -21,7 +16,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static String DB_NAME = "MirimUnsae.db";
     private Context mContext;
 
-    //DB 생성
+    // DB 생성
     public DatabaseHelper(Context context) {
         super(context, DB_NAME, null, 1);
 
@@ -40,7 +35,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    // db를 assets에서 복사해온다.
+    // db를 assets에서 복사
     private void dbCopy()
     {
         try

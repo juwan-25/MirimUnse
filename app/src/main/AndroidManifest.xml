@@ -23,21 +23,11 @@
             android:exported="false" />
 
         <activity
-            android:name=".SettingsActivity2"
-            android:exported="false" />
-
-        <activity
             android:name=".LuckCheck2Activity"
             android:exported="false" />
         <activity
             android:name=".InforActivity"
             android:exported="false" />
-
-        <!--
-                <meta-data
-            android:name="com.google.android.actions"
-            android:resource="@xml/background" />
-        -->
         <activity
             android:name=".LuckCheckDetailActivity"
             android:exported="false" />

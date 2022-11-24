@@ -2,31 +2,21 @@ package kr.hs.s2104.mirimunse;
 
 import android.content.Context;
 import android.content.Intent;
-import android.renderscript.ScriptGroup;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.ListAdapter;
+
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.w3c.dom.Text;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.List;
-
-import javax.net.ssl.SSLSessionBindingEvent;
-
-import kr.hs.s2104.mirimunse.FriendItem;
 
 public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.ViewHolder> {
 
     private ArrayList<FriendItem> mFriendList;
-    private Context mContext;
 
     public interface RecyclerViewClickListener {
         public void recyclerViewListClicked(View v, int position);
@@ -44,29 +34,14 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
     @Override
     public MyRecyclerAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_recyclerview, parent, false);
-        //return new ViewHolder(view);
         ViewHolder holder = new ViewHolder(view);
         return holder;
     }
 
-    // https://fjdkslvn.tistory.com/11
     @Override
     public void onBindViewHolder(@NonNull MyRecyclerAdapter.ViewHolder holder, int position) {
-        //holder.onBind(mFriendList.get(position));
-
-        final FriendItem item = mFriendList.get(position);
         holder.itemView.setTag(position);
         holder.name.setText(mFriendList.get(position).getName());
-
-//        holder.itemView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Context context = v.getContext();
-//                Intent intent = new Intent(v.getContext(), LuckRecordDetailActivity.class);
-//                v.getContext().startActivity(intent);
-//
-//            }
-//        });
     }
 
     public void setFriendList(ArrayList<FriendItem> list){
@@ -87,9 +62,9 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            profile = (ImageView) itemView.findViewById(R.id.profile);
-            name = (TextView) itemView.findViewById(R.id.name);
-            message = (ImageView) itemView.findViewById(R.id.message);
+            profile = itemView.findViewById(R.id.profile);
+            name = itemView.findViewById(R.id.name);
+            message = itemView.findViewById(R.id.message);
 
             // 아이템 클릭 이벤트 처리
             itemView.setOnClickListener(new View.OnClickListener() {
